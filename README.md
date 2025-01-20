@@ -1,4 +1,3 @@
 # Document-based Question Answering Application
 
-The project description will be updated soon.
-
+The project description will be updated soon. 
