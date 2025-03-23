@@ -27,3 +27,8 @@ modules, self.module_kwargs = self._load_sbert_model(
                 )
 ```
 Set trust_remote_code=True, then restart jupyter notebook and rerun again.
+
+## Note on running RAG_Pipeline_big_model.ipynb
+
+This model requires a large VRAM for single GPU. Currently, I am using Vast.ai with RTX A6000, 48 VRAM. Suggested VRAM 
+on a single GPU is about 30GBs
