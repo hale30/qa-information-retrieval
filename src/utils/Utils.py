@@ -288,38 +288,65 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
 
 
 def prepare_question():
-    list_questions = []
-    list_questions.append("Can you differentiate a cross-listed course and elective applied course in the case of a double major?")
-    list_questions.append("I would like to ask for the capstone withdrawal policy. What will be the impact when I choose to drop the capstone before the Fall 2025 term starts? Will there be any penalties associated with withdrawing, such as a 'W' notation on my transcript?")
-    list_questions.append("Questions related to course history, in which one course can have multiple IDs? Like Advanced Deep Learning course. How would it be handled among different cohorts?")
-    list_questions.append("I have taken Microeconomic Analysis and Macroeconomic Analysis in Fall 2023. Am I eligible to take Financial Economics in Spring 2024?")
-    list_questions.append("If I have waived the course Computer Science I, but I want to declare Computer Science major, do I have to take Computer Science I?")
-    list_questions.append("If I have taken the following courses: Mathematical Statistics, Abstract Algebra, Linear Algebra, Multivariable Calculus, Calculus, Differential Equation, Stochastic Calculus, Statistical Learning, Discrete Mathematics, Probability, am I eligible to declare a minor in Applied Mathematics? What about majoring in Applied Mathematics?")
-    list_questions.append("I have completed these 100-level courses: Introduction to Art History and Theory, Introduction to Film History and Theory. Am I eligible to start a Capstone in my major Arts and Media Studies?")
-    list_questions.append("Is it possible that I write a book as my History Capstone?")
-    list_questions.append("Given I have finished these subjects: Advanced Deep Learning, Machine Learning, Deep Learning, Database. Are they sufficient for the Advanced Courses requirement of the computer science major?")
-    list_questions.append("I have a question if I take a gap year, will my financial aid be canceled? If yes, can I still re-apply for the financial aid program when I get back to school? Thank you.")
-    list_questions.append("I am aware that Fulbright has to organize online classes instead of on-campus ones. Therefore, will there be any change in the tuition fee?")
-    list_questions.append("If I major in Economics, is it sufficient that I take Scholar Development to fulfill Experiential Learning requirements?")
-    list_questions.append("Is it sufficient for me to complete 4 credits in EL if I major in Engineering?")
-    list_questions.append("Can I take all four engineering foundation courses and only two intermediate engineering courses?")
-    list_questions.append("If I have completed the course Intro to AI, will CS207 - Object-Oriented Analysis and Design and CS211 – Operating Systems suffice to fill the rest two intermediate courses?")
-    list_questions.append("Does completing both Microeconomics and Macroeconomics satisfy the core theory requirement, or is an additional course needed?")
-    list_questions.append("If I want to major in Engineering, can I choose other programming courses besides Computer Science I and Computer Science II, for instance Introduction to data visualization?")
-    list_questions.append("Given I took Discrete Mathematics in Spring 2022 and earned B, then the same course in Spring 2024 and earned C-, which grades will be kept?")
-    list_questions.append("Can I register 300-level math courses as exploratory courses E4?")
-    list_questions.append("Can I register for more than 20 credits in a semester?")
-    list_questions.append("What is the maximum number of times I can retake a course to improve my grade, and how does it affect my transcript?")
-    list_questions.append("For a student doing the literature capstone, if a student includes charts or tables, do they count toward the word limit?")
-    list_questions.append("If I failed Capstone I in the Fall 2024, can I redo it in Spring 2025?")
-    list_questions.append("If I do Literature capstone in Decolonial studies, can it be approved?")
-    list_questions.append("I am a Co24 majoring in Computer Science and taking the Database course. Does it count as major courses (difference in flowchart of CS for Co24 and Co25 onwards)?")
-    list_questions.append("Can Discrete Mathematics be counted for both Computer Science and Applied Mathematics majors?")
+    list_questions = [
+        '''I am writing to request your review of my course tracking in preparation for graduation. I am pursuing a double major in Computer Science and Applied Mathematics. I have attached the spreadsheet tracking my courses for your review. I would appreciate it if you could take a look and provide any necessary feedback.
+        Humility, Global Humanities and Social Change, Linear Algebra, Modern Vietnamese Culture and Society, Quantitative Reasoning for a Digital Age, Discrete Math, Computer Science II: Data Structures, Programming for Data Science and Visualization, Design and Systems Thinking, Scientific Inquiry, Computer Organization, Calculus, Intelligent Robot Studio: From Theory to Practice, How to become a writer: lessons from Vietnamese and non-Vietnamese writers, Introduction to Political Science, The Global Vietnam War II, Deep Learning for Artificial Intelligence, Advanced Deep Learning, Probability, Computer Science I: Introduction to Programming, Algorithms and Theory of Computing, Database System, Advanced Programming Techniques, Introduction to Artificial Intelligence, Machine Learning for Data Science, Multivariable Calculus, Mathematical Statistics, General Work Program (GWP) 1, [Independent Research Project] Labeled FreSCo- Mining Frequent Patterns in labeled Simplicial Complexes, Object-Oriented Analysis and Design, Statistical Learning, Operating Systems, Abstract Algebra, Differential Equations, Stochastic Calculus, Natural Language Processing, Advanced Linear Algebra.''',
+        "Can you differentiate a cross-listed course and elective applied course in the case of a double major?",
+        "I would like to ask for the capstone withdrawal policy. What will be the impact when I choose to drop the capstone before the Fall 2025 term starts? Will there be any penalties associated with withdrawing, such as a 'W' notation on my transcript?",
+        "Questions related to course history, in which one course can have multiple IDs? Like Advanced Deep Learning course. How would it be handled among different cohorts?",
+        "I have taken Microeconomic Analysis and Macroeconomic Analysis in Fall 2023. Am I eligible to take Financial Economics in Spring 2024?",
+        "If I have waived the course Computer Science I, but I want to declare Computer Science major, do I have to take Computer Science I?",
+        "If I have taken the following courses: Mathematical Statistics, Abstract Algebra, Linear Algebra, Multivariable Calculus, Calculus, Differential Equation, Stochastic Calculus, Statistical Learning, Discrete Mathematics, Probability, am I eligible to declare a minor in Applied Mathematics? What about majoring in Applied Mathematics?",
+        "I have completed these 100-level courses: Introduction to Art History and Theory, Introduction to Film History and Theory. Am I eligible to start a Capstone in my major Arts and Media Studies?",
+        "Is it possible that I write a book as my History Capstone?",
+        "Given I have finished these subjects: Advanced Deep Learning, Machine Learning, Deep Learning, Database. Are they sufficient for the Advanced Courses requirement of the computer science major?",
+        "I have a question if I take a gap year, will my financial aid be canceled? If yes, can I still re-apply for the financial aid program when I get back to school?",
+        "I am aware that Fulbright has to organize online classes instead of on-campus ones. Therefore, will there be any change in the tuition fee?",
+        "If I major in Economics, is it sufficient that I take Scholar Development to fulfill Experiential Learning requirements?",
+        "Is it sufficient for me to complete 4 credits in EL if I major in Engineering?",
+        "Can I take all four engineering foundation courses and only two intermediate engineering courses?",
+        "If I have completed the course Intro to AI, will CS207 - Object-Oriented Analysis and Design and CS211 – Operating Systems suffice to fill the rest two intermediate courses?",
+        "Does completing both Microeconomics and Macroeconomics satisfy the core theory requirement, or is an additional course needed?",
+        "If I want to major in Engineering, can I choose other programming courses besides Computer Science I and Computer Science II, for instance Introduction to data visualization?",
+        "Given I took Discrete Mathematics in Spring 2022 and earned B, then the same course in Spring 2024 and earned C-, which grades will be kept?",
+        "Can I register 300-level math courses as exploratory courses E4?",
+        "Can I register for more than 20 credits in a semester?",
+        "What is the maximum number of times I can retake a course to improve my grade, and how does it affect my transcript?",
+        "For a student doing the literature capstone, if a student includes charts or tables, do they count toward the word limit?",
+        "If I failed Capstone I in the Fall 2024, can I redo it in Spring 2025?",
+        "If I do Literature capstone in Decolonial studies, can it be approved?",
+        "I am a Co24 majoring in Computer Science and taking the Database course. Does it count as major courses?",
+        "Can Discrete Mathematics be counted for both Computer Science and Applied Mathematics majors?",
+        "What steps should I take to ensure a smooth transfer of my exchange semester credits from Bard College to Fulbright?",
+        "Are 100-level and 200-level courses that are not explicitly categorized as E1, E2, E3, or E4 also excluded from fulfilling the Exploratory requirement?",
+        "I am a Co25 student pursuing a Computer Science major, can I choose to follow either the old flowchart or the new one?",
+        "If I withdraw from a course after the 4th week of the semester, will I be deducted 4 credits of financial aid?",
+        "Why do I need to take 8 exploratory courses?",
+        "Can I take 160 credits given that I pay for the full tuition fee?",
+        "What are the requirements for mathematics courses to pursue HCE major?",
+        "How is the grade of a replaced course displayed on the transcript? Will it replace the old one or create a new entry in the transcript?",
+        "What are the courses that can replace the capstone for a given major?",
+        "Is it possible to graduate with double majors in HCE and Applied Mathematics? If yes, please provide a sample study plan.",
+        "Are the 4-credit EL counted towards the credits covered by financial aid?",
+        "What are the exchange policies of Fulbright?",
+        "What actions are considered plagiarism? Are AI-generated works counted?",
+        "Why is the graduation requirement 128 credits, but the major requirement is only 48 credits?",
+        "Explain the cross-listed mechanism between courses.",
+        "When is the graduation ceremony for Co25?",
+        "How does the core quest course selection work to fulfill core credits?",
+        "Can I take a 300-level course to fulfill a 200-level major requirement?",
+        "If I take a course at another university and want to transfer the credits to Fulbright, but Fulbright doesn’t have that major code, yet the course is related to a major at Fulbright, can I count it toward that major?",
+        "I have 112 credits from Fulbright and 16 credits from EL. Can I graduate?",
+        "I have received an offer to attend an international conference but lack funding. What school funds can I apply for?",
+        "What is the maximum number of credits I can transfer from another university after officially enrolling at Fulbright?",
+        "In a regular semester, can I take only 2 courses? If so, how will my tuition fees be affected?",
+        "Can I pursue 3 majors?"
+    ]
     return list_questions
 
 
 def main():
-    save_folder = "answer_all_policy"
+    save_folder = "answer_all_50_policy"
     answer_path = os.path.join(save_folder, "answer")
     database_path = os.path.join(save_folder, "database")
     data_path = "/home/thomas/Downloads/qa-information-retrieval/data"
@@ -328,19 +355,21 @@ def main():
 
     # Define embedding models to be tested
     embedding_models = [
-        "Alibaba-NLP/gte-multilingual-base",
-        "ibm-granite/granite-embedding-125m-english",
-        "NovaSearch/stella_en_400M_v5",
-        "jinaai/jina-embeddings-v3",
-
+        # "Alibaba-NLP/gte-multilingual-base",
+        # "ibm-granite/granite-embedding-125m-english",
+        # "NovaSearch/stella_en_400M_v5",
+        # "jinaai/jina-embeddings-v3",
+        "NovaSearch/jasper_en_vision_language_v1",
+        "w601sxs/b1ade-embed"
     ]
 
     # Define LLM models to be tested
     llm_models = [
         "mistralai/Mistral-7B-Instruct-v0.3",
         "allenai/Llama-3.1-Tulu-3-8B",
+        "Qwen/Qwen2.5-7B-Instruct-1M",
         # "upstage/solar-pro-preview-instruct",
-        "Qwen/Qwen2.5-7B-Instruct-1M"
+        # "Cran-May/tempmotacilla-cinerea-0308"
     ]
 
     # Load and preprocess the PDF document
@@ -362,7 +391,10 @@ def main():
             print(f"-"*30 + f"Answer with {embedding_name} and {llm_name}" + "-"*30)
 
             # Load the selected LLM model
-            llm_pipe = load_local_llm(llm_model)
+            try:
+                llm_pipe = load_local_llm(llm_model)
+            except torch.cuda.OutOfMemoryError:
+                print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
 
             # Prepare questions to ask the model
             list_questions = prepare_question()
@@ -372,24 +404,33 @@ def main():
 
 ## Model: {llm_model} with {embedding_model}
             """
-
             for question in list_questions:
-                # Get response from the LLM
-                context, response = ask_question(llm_pipe, vectorstore, question)
-                print(response)
+                try:
+                    # Get response from the LLM
+                    context, response = ask_question(llm_pipe, vectorstore, question)
+                    print(response)
+                    print("-" * 50)
 
-                # Append results to markdown content
-                markdown_content += f"""
-            
-### Question
-{question}
-
-### Context
-{context}
-
-### Response
-{response}
-"""
+                    # Append results to markdown content
+                    markdown_content += f"""
+                
+    ### Question
+    {question}
+    
+    ### Context
+    {context}
+    
+    ### Response
+    {response}
+    """
+                except torch.cuda.OutOfMemoryError:
+                    print("Cuda is out of memory!!! Continue to the next question.")
+                    print("-"*50)
+                    markdown_content += f"""
+    ### Question
+    {question}
+    Cuda is out of memory!!!! Continue
+    """
 
             # Free up CUDA memory after processing each model
             free_cuda_memory()
