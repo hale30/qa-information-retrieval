@@ -4,7 +4,7 @@
 ## Model: mistralai/Mistral-7B-Instruct-v0.3 with Alibaba-NLP/gte-multilingual-base
 
  
-### Question
+### Question 1
 I am writing to request your review of my course tracking in preparation for graduation. I am pursuing a double major in Computer Science and Applied Mathematics. I have attached the spreadsheet tracking my courses for your review. I would appreciate it if you could take a look and provide any necessary feedback.
 Humility, Global Humanities and Social Change, Linear Algebra, Modern Vietnamese Culture and Society, Quantitative Reasoning for a Digital Age, Discrete Math, Computer Science II: Data Structures, Programming for Data Science and Visualization, Design and Systems Thinking, Scientific Inquiry, Computer Organization, Calculus, Intelligent Robot Studio: From Theory to Practice, How to become a writer: lessons from Vietnamese and non-Vietnamese writers, Introduction to Political Science, The Global Vietnam War II, Deep Learning for Artificial Intelligence, Advanced Deep Learning, Probability, Computer Science I: Introduction to Programming, Algorithms and Theory of Computing, Database System, Advanced Programming Techniques, Introduction to Artificial Intelligence, Machine Learning for Data Science, Multivariable Calculus, Mathematical Statistics, General Work Program (GWP) 1, [Independent Research Project] Labeled FreSCo- Mining Frequent Patterns in labeled Simplicial Complexes, Object-Oriented Analysis and Design, Statistical Learning, Operating Systems, Abstract Algebra, Differential Equations, Stochastic Calculus, Natural Language Processing, Advanced Linear Algebra.
 
@@ -28,7 +28,7 @@ To graduate, you need to complete the required 128 credits. As a double major in
 Please consult with an academic advisor to discuss course selections and any other graduation requirements. The attached spreadsheet should be updated with the missing course(s) and reviewed by your advisor for final confirmation.
 
  
-### Question
+### Question 2
 Can you differentiate a cross-listed course and elective applied course in the case of a double major?
 
 ### Context
@@ -42,7 +42,7 @@ major either need to complete the course’s prerequisites or obtain the instruc
 In the context provided, a cross-listed course is a course that is shared by two different majors (or major and minor) and can be counted towards both sets of requirements, up to a limit of 8 credits (two courses) per each pair of majors. An elective applied course, on the other hand, is a course from another major that emphasizes application and is taken by students to shape their study path into one of the applied fields, such as Applied Statistics, Engineering Mathematics, or Data Science. These elective applied courses are not necessarily cross-listed with the student's major(s) and are not used to satisfy major requirements. Instead, they are chosen to supplement the student's studies and deepen their knowledge in a particular area.
 
  
-### Question
+### Question 3
 I would like to ask for the capstone withdrawal policy. What will be the impact when I choose to drop the capstone before the Fall 2025 term starts? Will there be any penalties associated with withdrawing, such as a 'W' notation on my transcript?
 
 ### Context
@@ -64,7 +64,7 @@ which students withdraw in this period. This grade does not affect a student’s
 If you decide to withdraw from the capstone course before the Fall 2025 term starts, you will be able to do so during the first withdrawal period (Week 2-4) without any consequences. This means that no 'W' notation will be recorded on your transcript, and it will not affect your GPA. However, if you withdraw during the second withdrawal period (Week 4-8), a 'W' grade will be recorded, but it will not affect your GPA. Keep in mind that exceptions to this policy may only be permitted in exceptional circumstances, and you would need to provide supporting documentation and receive approval from the course instructor, your academic/major advisor, and the Registrar's Office. It is also important to note that if you withdraw after the halfway point of the course, you may receive an 'F' grade, which could potentially affect your GPA.
 
  
-### Question
+### Question 4
 Questions related to course history, in which one course can have multiple IDs? Like Advanced Deep Learning course. How would it be handled among different cohorts?
 
 ### Context
@@ -78,7 +78,7 @@ originated in the west, we also examine how they have migrated to, been translat
 In the context provided, it appears that courses can be cross-listed or tagged between different majors or minors. This means one course can have multiple IDs depending on the major or minor it is associated with. For example, the Advanced Deep Learning course might be cross-listed as COMP 301 for the Computer Science major and as AI 301 for the Artificial Intelligence minor. Each cohort would take the course under the ID relevant to their major or minor. However, the text does not explicitly specify how course histories would be handled for different cohorts taking the same course under different IDs. This would likely depend on the specific policies of the institution offering the courses.
 
  
-### Question
+### Question 5
 I have taken Microeconomic Analysis and Macroeconomic Analysis in Fall 2023. Am I eligible to take Financial Economics in Spring 2024?
 
 ### Context
@@ -92,7 +92,7 @@ of Economics 2 Introduction to Data Analysis Core Courses Exploratory Courses In
 Yes, you are eligible to take Financial Economics in Spring 2024 as you have completed the prerequisite courses Microeconomic Analysis and Macroeconomic Analysis. However, you are advised to ensure that you have also taken Principles of Economics 1 and 2 and Introduction to Data Analysis before taking Financial Economics to have a well-rounded understanding of the field.
 
  
-### Question
+### Question 6
 If I have waived the course Computer Science I, but I want to declare Computer Science major, do I have to take Computer Science I?
 
 ### Context
@@ -116,7 +116,7 @@ students will be able to choose the courses in the following concentrations: 1. 
 Yes, you still have to take Computer Science I even though you have waived the course, as the requirement to declare the Computer Science major is to complete Introduction to Programming (CS1). However, if you are allowed to waive the course, it may be possible to find an alternative course that can fulfill this requirement. It is best to consult with an academic advisor to discuss your options.
 
  
-### Question
+### Question 7
 If I have taken the following courses: Mathematical Statistics, Abstract Algebra, Linear Algebra, Multivariable Calculus, Calculus, Differential Equation, Stochastic Calculus, Statistical Learning, Discrete Mathematics, Probability, am I eligible to declare a minor in Applied Mathematics? What about majoring in Applied Mathematics?
 
 ### Context
@@ -130,7 +130,7 @@ II • The Capstone must be graded Honors Minor Requirements The goal of the Min
 Yes, you are eligible to declare a minor in Applied Mathematics as the courses you have taken cover the requirements for a Minor in Applied Mathematics, which include Linear Algebra, Intro to Data Analysis, Calculus, Multivariable Calculus, Intermediate courses (2 required) and an Advanced course (1 required). However, to major in Applied Mathematics, you would need to complete at least 3 Foundation courses and 1 Intermediate course, which you have not mentioned completing in your list of courses. Therefore, you might still need additional courses to major in Applied Mathematics.
 
  
-### Question
+### Question 8
 I have completed these 100-level courses: Introduction to Art History and Theory, Introduction to Film History and Theory. Am I eligible to start a Capstone in my major Arts and Media Studies?
 
 ### Context
@@ -144,7 +144,7 @@ areas. Advanced courses can also be independent studies co-designed by the stude
 Based on the provided context, you are eligible to apply for the Capstone in Arts and Media Studies as you have completed the 100-level major requirements, which include Introduction to Art History and Theory and Introduction to Film History and Theory. However, you also need to meet the other eligibility criteria mentioned, such as maintaining a minimum GPA of 3.6 and having no outstanding Incompletes.
 
  
-### Question
+### Question 9
 Is it possible that I write a book as my History Capstone?
 
 ### Context
@@ -158,7 +158,7 @@ The Capstone in History comprises one year-long research design seminar (4 credi
 Yes, it is possible to write a book as your History Capstone project, as long as it is approved by the faculty and has a substantial written component. However, it might be more challenging to complete a full-length book within the confines of a one-year course. You may want to consider breaking it down into a series of smaller, interconnected projects or focusing on a more manageable portion of the subject matter.
 
  
-### Question
+### Question 10
 Given I have finished these subjects: Advanced Deep Learning, Machine Learning, Deep Learning, Database. Are they sufficient for the Advanced Courses requirement of the computer science major?
 
 ### Context
@@ -172,7 +172,7 @@ major either need to complete the course’s prerequisites or obtain the instruc
 Yes, the subjects Advanced Deep Learning, Machine Learning, Deep Learning, and Database can be considered as advanced courses (300 level) for the computer science major, as they fall under the Data Science and AI concentration. However, it's important to consult with an academic advisor to confirm the specific course requirements and ensure that the courses chosen align with the other required courses for the major.
 
  
-### Question
+### Question 11
 I have a question if I take a gap year, will my financial aid be canceled? If yes, can I still re-apply for the financial aid program when I get back to school?
 
 ### Context
@@ -186,7 +186,7 @@ Student Financial Services to request a late and/or an extension of tuition fee 
 A gap year would not necessarily result in the cancellation of your financial aid, but it would require you to re-apply for financial aid once you return to Fulbright. However, if you withdraw from the program without permission or are suspended and then take a gap year, your financial aid may be affected or canceled, but you can still re-apply for financial aid upon re-admission, provided you address the reasons for your suspensions and cancellation in your application and meet the criteria for re-admission. It's always best to consult with the financial aid office for specific information regarding your situation.
 
  
-### Question
+### Question 12
 I am aware that Fulbright has to organize online classes instead of on-campus ones. Therefore, will there be any change in the tuition fee?
 
 ### Context
@@ -200,7 +200,7 @@ account. 3.3 Course Change/Add/Drop and Waitlist Policies All courses offered at
 No, there is no reduction in tuition for online classes; however, in exceptional circumstances, tuition credit may be considered following the "Fees & Charges Guide" for undergraduate students.
 
  
-### Question
+### Question 13
 If I major in Economics, is it sufficient that I take Scholar Development to fulfill Experiential Learning requirements?
 
 ### Context
@@ -214,7 +214,7 @@ tagged. For instance, if major A requires certain courses from major B for out-o
 No, while Scholar Development might be valuable for personal and professional development, it does not fulfill the Experiential Learning requirements for the Economics major. To fulfill this requirement, you must complete at least 4 credits and up to 12 credits under the ELP as a graduation requirement, which can be found in Academic Affairs (AA), Career Services (CS), or the Center for Entrepreneurship and Innovation.
 
  
-### Question
+### Question 14
 Is it sufficient for me to complete 4 credits in EL if I major in Engineering?
 
 ### Context
@@ -228,7 +228,7 @@ optional) and Experiential Learning (4 – 12 credits). • 9 Engineering major 
 Yes, according to the degree requirements provided, it is sufficient to complete 4 credits in Experiential Learning (EL) if you major in Engineering. However, it is important to note that the EL requirement can range from 4 to 12 credits, so you may have the opportunity to complete more if you wish.
 
  
-### Question
+### Question 15
 Can I take all four engineering foundation courses and only two intermediate engineering courses?
 
 ### Context
@@ -242,7 +242,7 @@ minor in Engineering, they will gain more specialized knowledge and skills by ta
 No, the requirement for declaring the Engineering major is to complete two Engineering Foundation/Intermediate courses, not four. However, once you have declared your major in Engineering, you can take more Engineering Foundation courses and Engineering Advanced courses to gain more specialized knowledge and skills.
 
  
-### Question
+### Question 16
 If I have completed the course Intro to AI, will CS207 - Object-Oriented Analysis and Design and CS211 – Operating Systems suffice to fill the rest two intermediate courses?
 
 ### Context
@@ -256,7 +256,7 @@ students will be able to choose the courses in the following concentrations: 1. 
 No, completing Intro to AI (assuming it's a CS course) would not necessarily fill the rest of the two intermediate courses. To complete the major requirements, students are recommended to take up to 4 intermediate courses, and Foundation courses are not a prerequisite for intermediate courses. However, it is suggested to complete foundation courses as early as possible. CS207 - Object-Oriented Analysis and Design and CS211 – Operating Systems are examples of intermediate courses, but the number and type of courses a student needs to complete may vary depending on their chosen concentration. Therefore, it's essential to consult with an advisor to ensure that the selected courses meet the requirements for completing the major.
 
  
-### Question
+### Question 17
 Does completing both Microeconomics and Macroeconomics satisfy the core theory requirement, or is an additional course needed?
 
 ### Context
@@ -270,7 +270,7 @@ Development of Southeast Asia • Environment Economics • Game Theory • Inte
 Yes, completing both Microeconomics and Macroeconomics satisfies the core theory requirement as per the sample student journey and major outline provided.
 
  
-### Question
+### Question 18
 If I want to major in Engineering, can I choose other programming courses besides Computer Science I and Computer Science II, for instance Introduction to data visualization?
 
 ### Context
@@ -284,7 +284,7 @@ how to identify ethical issues in different enterprise computing settings, revie
 Based on the provided context, it is not explicitly stated that only Computer Science I and Computer Science II are the only programming courses required for a Computer Science major. However, as a Computer Science major, you would typically be required to take foundational programming courses. If Engineering is your major and you wish to explore data visualization, it would be best to consult your academic advisor to determine if the Introduction to data visualization course can be applied towards your Engineering degree requirements.
 
  
-### Question
+### Question 19
 Given I took Discrete Mathematics in Spring 2022 and earned B, then the same course in Spring 2024 and earned C-, which grades will be kept?
 
 ### Context
@@ -298,7 +298,7 @@ requirements for next-level courses. • I = Incomplete: If a student is unable 
 In this case, the B grade from Spring 2022 will be kept, and the C- grade from Spring 2024 will be replaced with the notation "RP" on the transcript. The B grade will be used in the GPA calculation.
 
  
-### Question
+### Question 20
 Can I register 300-level math courses as exploratory courses E4?
 
 ### Context
@@ -312,7 +312,7 @@ optional) and Experiential Learning (4 – 12 credits). • 9 Engineering major 
 No, 300-level math courses cannot be registered as exploratory courses E4, as they fall under the category of Mathematics or Basic Science courses, not the Exploratory requirement categories.
 
  
-### Question
+### Question 21
 Can I register for more than 20 credits in a semester?
 
 ### Context
@@ -330,7 +330,7 @@ and passions lie. Students need to complete 8 credits (2 courses at the 100-leve
 Yes, with the approval of the Academic Advisor, you can register for a maximum of 20 credits per term. However, you should note that the general rule is to take 15-18 credits per term, and taking more might impact the quality of your academic performance.
 
  
-### Question
+### Question 22
 What is the maximum number of times I can retake a course to improve my grade, and how does it affect my transcript?
 
 ### Context
@@ -344,7 +344,7 @@ maintaining the full-time enrollment status of registering for a minimum of 12 c
 A student can retake a course twice to improve their grade. If a student retakes a course for the third time, it will only be allowed if they failed the second time or if a specific grade is needed to meet the major requirements. The higher grade will be kept and used in the GPA calculation, while the lower grades will be overwritten by the notation "RP", meaning "repeated", and remain on the transcript. The credits of the repeated course are counted toward the total attempted credits.
 
  
-### Question
+### Question 23
 For a student doing the literature capstone, if a student includes charts or tables, do they count toward the word limit?
 
 ### Context
@@ -358,7 +358,7 @@ for a Creative Writing Capstone in Literature, the textual or written component 
 Based on the provided guidelines, charts or tables are not explicitly mentioned as part of the word count for the literature capstone. However, since they are not part of the textual or written component of the work, they might not be included in the word count. It is best to consult with the professor for specific guidelines.
 
  
-### Question
+### Question 24
 If I failed Capstone I in the Fall 2024, can I redo it in Spring 2025?
 
 ### Context
@@ -372,7 +372,7 @@ complete by the beginning of Capstone I • No outstanding Incompletes at the ti
 Yes, if you failed Capstone I in Fall 2024, you can redo it in Spring 2025. However, you should be aware that you have to meet the eligibility criteria and the quality of the proposal will be assessed by the major faculty. Additionally, you will have to maintain a 3.2 GPA throughout your senior year to be able to earn an Honors for the Capstone. Failure to maintain the required GPA will result in the Capstone being capped at Pass.
 
  
-### Question
+### Question 25
 If I do Literature capstone in Decolonial studies, can it be approved?
 
 ### Context
@@ -386,7 +386,7 @@ are also expected to think very carefully about an appropriate scope of research
 Yes, if there is a full-time faculty member in Literature who holds expertise in Decolonial studies, your Literature capstone in Decolonial studies can be approved. If not, the project may not be approved.
 
  
-### Question
+### Question 26
 I am a Co24 majoring in Computer Science and taking the Database course. Does it count as major courses?
 
 ### Context
@@ -400,7 +400,7 @@ and for competitive graduate and professional study at top-tier international pr
 Yes, the Database Systems course is a part of the major courses for a Computer Science student.
 
  
-### Question
+### Question 27
 Can Discrete Mathematics be counted for both Computer Science and Applied Mathematics majors?
 
 ### Context
@@ -414,7 +414,7 @@ relevant to the core of computing arise from the study of discrete mathematical 
 Yes, Discrete Mathematics can be counted for both Computer Science and Applied Mathematics majors as it is a foundation course for both disciplines. However, students pursuing Applied Mathematics may have additional courses related to Mathematics.
 
  
-### Question
+### Question 28
 What steps should I take to ensure a smooth transfer of my exchange semester credits from Bard College to Fulbright?
 
 ### Context
@@ -434,7 +434,7 @@ To ensure a smooth transfer of your exchange semester credits from Bard College 
 5. For more detailed information, refer to the Transfer Credit policy_Final_V3.0 published in the One-Stop portal. If the AP/IB/CIE Credit Policy is not yet developed, further information may be sought from Fulbright University Vietnam.
 
  
-### Question
+### Question 29
 Are 100-level and 200-level courses that are not explicitly categorized as E1, E2, E3, or E4 also excluded from fulfilling the Exploratory requirement?
 
 ### Context
@@ -448,7 +448,7 @@ Students should aim to complete the Exploratory requirements by the end of their
 Yes, according to the given context, only courses that are categorized as E1, E2, E3, or E4 (Arts and Humanities, Social Sciences, STEM, and Mathematics and Computing respectively) can fulfill the Exploratory requirement. Courses at the 100-level or 200-level that are not explicitly categorized are excluded from fulfilling this requirement.
 
  
-### Question
+### Question 30
 I am a Co25 student pursuing a Computer Science major, can I choose to follow either the old flowchart or the new one?
 
 ### Context
@@ -462,7 +462,7 @@ and passions lie. Students need to complete 8 credits (2 courses at the 100-leve
 As a Co24 student, you are required to follow the new Exploratory requirements. You need to complete 16 credits (4 courses) to fulfill your Exploratory requirements, one course from each category: E1-Arts and Humanities, E2-Social Sciences, E3-Sciences and Engineering, and E4-Mathematics and Computing.
 
  
-### Question
+### Question 31
 If I withdraw from a course after the 4th week of the semester, will I be deducted 4 credits of financial aid?
 
 ### Context
@@ -484,7 +484,7 @@ SCHEDULE: i.e. CORE 104 001 Scientific Inquiry                              Thu/
 No, withdrawing from a course after the 4th week of the semester will not lead to a deduction of financial aid. However, the withdrawal will result in an ‘F’ grade, which may affect your GPA and your eligibility for financial aid in future terms. It's important to consult with your financial aid advisor before making any decisions about course withdrawals.
 
  
-### Question
+### Question 32
 Why do I need to take 8 exploratory courses?
 
 ### Context
@@ -498,7 +498,7 @@ Systems Thinking”. Exploratory courses encourage students to step out of their
 You need to take 8 exploratory courses to encourage you to step out of your comfort zone by exploring broad areas of study and discover more fully where your interests and passions lie. These courses will help you to equip yourself with knowledge in different areas, and up to two of them can also count towards your major requirements if you have more than one major.
 
  
-### Question
+### Question 33
 Can I take 160 credits given that I pay for the full tuition fee?
 
 ### Context
@@ -512,7 +512,7 @@ circumstances (see Section 12), and it requires supporting documentation as well
 No, you can't take 160 credits to earn an undergraduate degree from Fulbright. The minimum required credit hours to graduate with an undergraduate degree is 128. Even though you may pay for the full tuition fee, you cannot exceed the required credit hours.
 
  
-### Question
+### Question 34
 What are the requirements for mathematics courses to pursue HCE major?
 
 ### Context
@@ -526,7 +526,7 @@ Seminar: This course is in the style of a reading seminar where each student wou
 To pursue a Bachelor of Science in Applied Mathematics (Honors) (HCE), the requirements include 5 Core courses (20 credits), 8 Exploratory courses (32 credits), Fulbright Seminar (4 credits, optional), Experiential Learning (4 – 12 credits), Required foundation courses: Linear Algebra, Calculus, Introduction to Data analysis, Multivariable Calculus (16 credits), 1 writing course (History of Mathematics) (4 credits), 2 intermediate courses (8 credits), 1 Pure Mathematics course (4 credits), 2 advanced courses in specialized areas of study (8 credits), 2 elective applied courses approved by the major coordinator (at least one at 300 level) (8 credits), Special topics seminar (4 credits), and Capstone I and Capstone II (8 credits).
 
  
-### Question
+### Question 35
 How is the grade of a replaced course displayed on the transcript? Will it replace the old one or create a new entry in the transcript?
 
 ### Context
@@ -540,7 +540,7 @@ take a total of 8 credits (typically 2 courses, 4 credits each) in one academic 
 The grade of a replaced course will be overwritten by the notation "RP", meaning "repeated", and remain on the transcript. Thus, it creates a new entry in the transcript, but the old grade is replaced with the notation "RP".
 
  
-### Question
+### Question 36
 What are the courses that can replace the capstone for a given major?
 
 ### Context
@@ -554,7 +554,7 @@ proposal to presentation of results. Per the academic policies of Fulbright Univ
 For the IS major, the capstone can be replaced with 8 credits from IS courses, including at least 4 credits of 300-level course(s).
 
  
-### Question
+### Question 37
 Is it possible to graduate with double majors in HCE and Applied Mathematics? If yes, please provide a sample study plan.
 
 ### Context
@@ -608,7 +608,7 @@ Yes, it is possible to graduate with double majors in HCE (Human-Centered Engine
 12. Additional courses for HCE (12 – 16 credits) to meet the 120 total credits required for graduation.
 
  
-### Question
+### Question 38
 Are the 4-credit EL counted towards the credits covered by financial aid?
 
 ### Context
@@ -622,7 +622,7 @@ and passions lie. Students need to complete 8 credits (2 courses at the 100-leve
 The text does not provide explicit information about whether the 4-credit ELP (Experiential Learning Program) is counted towards the credits covered by financial aid. However, it is stated that ELP credits count towards elective or major requirements (upon advisor approval). Therefore, it is possible that they could be considered in the calculation of financial aid, but the specific details would need to be confirmed with the financial aid office or university policies.
 
  
-### Question
+### Question 39
 What are the exchange policies of Fulbright?
 
 ### Context
@@ -636,7 +636,7 @@ account. 3.3 Course Change/Add/Drop and Waitlist Policies All courses offered at
 At Fulbright, the course change/add/drop and withdrawal timeline is the same for all courses. During the Add/Drop period, students can freely add/drop course(s) except for Core courses. Changes are subject to space limitations, and students are responsible for maintaining the full-time enrollment status of registering for a minimum of 12 credits per term. There are two Withdrawal periods per term. During the first period, students can request to withdraw from the course without any consequence. During the second period, attempted credits and a “W” grade will be recorded on the transcript for the course(s) from which the student withdraws. In exceptional circumstances, tuition credit may be considered, but only if the student provides supporting documentation, and the course instructor(s), academic/major advisor, and the Registrar’s Office authorize it.
 
  
-### Question
+### Question 40
 What actions are considered plagiarism? Are AI-generated works counted?
 
 ### Context
@@ -658,7 +658,7 @@ According to Fulbright University Vietnam's Code of Academic Integrity, plagiari
 As for AI-generated works, they are subject to the regulations described in the Code of Academic Integrity. Creative projects involving generative AI will require full documentation of its usage. This documentation should include ethical and copyright issues associated with using generative AI and how these will be addressed throughout the project. Therefore, it is important to follow the guidelines and ensure proper citation when using AI-generated works to avoid plagiarism.
 
  
-### Question
+### Question 41
 Why is the graduation requirement 128 credits, but the major requirement is only 48 credits?
 
 ### Context
@@ -672,7 +672,7 @@ DEGREE REQUIREMENTS: Students graduate if the degree requirements are met. This 
 The graduation requirement of 128 credits includes the major requirement of 48 credits, as well as other institutional requirements such as the Core Curriculum, Exploratory requirements, and other general education courses. The major requirement of 48 credits is just a part of the overall 128 credit requirement for graduation.
 
  
-### Question
+### Question 42
 Explain the cross-listed mechanism between courses.
 
 ### Context
@@ -686,7 +686,7 @@ major or minor requirements must be taken for a letter grade. Students can claim
 Cross-listed courses are courses that can be used to satisfy requirements for more than one major (or major and minor) at the university. The limit is set to 8 credits (two courses) per pair of majors (or major and minor) and does not restrict the total number of double-counted credits or courses a student can claim. For instance, a student can major in both A and B and minor in C with a total of 6 double-counted courses: two in A and B, two in B and C, and two in A and C. This rule does not apply to courses that are not cross-listed. In interdisciplinary minors, courses are usually not cross-listed with the minors and are referred to as 'tagged' by these minors.
 
  
-### Question
+### Question 43
 When is the graduation ceremony for Co25?
 
 ### Context
@@ -706,7 +706,7 @@ want to include appendices (for example, additional tables or translated primary
 The question does not provide information regarding a specific graduation ceremony for Co25. It only mentions a capstone defense, which is a part of the academic process but not necessarily the graduation ceremony. Therefore, there is no answer to the question as asked.
 
  
-### Question
+### Question 44
 How does the core quest course selection work to fulfill core credits?
 
 ### Context
@@ -720,7 +720,7 @@ Elective Courses Concentration Courses Capstone I Capstone II OR 2 Intermediate/
 The core course selection in the context provided includes five core courses that students from the Class of 2027 and earlier need to complete to earn a Bachelor of Science in Integrated Sciences. These core courses are: Global Humanities, Modern Vietnamese Culture and Society, Quantitative Reasoning for a Digital Age, Scientific Inquiry, and Design and Systems Thinking. Each of these courses is worth 4 credits, totaling 20 credits. These core courses must be completed to fulfill the core requirements.
 
  
-### Question
+### Question 45
 Can I take a 300-level course to fulfill a 200-level major requirement?
 
 ### Context
@@ -734,7 +734,7 @@ Statistics and one introductory level course in Programming. Any 100-level and 2
 No, a 300-level course cannot be taken to fulfill a 200-level major requirement. The courses are designed to guide students to pursue a specific path within the natural sciences, and a 300-level course is part of the advanced courses, not the intermediate ones.
 
  
-### Question
+### Question 46
 If I take a course at another university and want to transfer the credits to Fulbright, but Fulbright doesn’t have that major code, yet the course is related to a major at Fulbright, can I count it toward that major?
 
 ### Context
@@ -748,7 +748,7 @@ category, with at most 4 out of 16 credits counted as Pass/No Pass. • Students
 No, if Fulbright doesn't have the major code for the course, it cannot be counted toward that major. However, if the course is evaluated to be equivalent to a course at Fulbright, you may be given an Exemption from doing that Fulbright course. The maximum number of credit hours that can be transferred and credited to a Fulbright undergraduate degree is 64.
 
  
-### Question
+### Question 47
 I have 112 credits from Fulbright and 16 credits from EL. Can I graduate?
 
 ### Context
@@ -762,7 +762,7 @@ count toward elective or major requirements (upon advisor approval). Fulbright�
 No, because to graduate with an undergraduate degree from Fulbright, a student must earn a minimum of 128 credit hours. However, you have earned 128 credits if you include the 16 credits from EL. The question does not mention whether you have earned the mandatory 4 credits and a maximum of 12 credits under the ELP as a graduation requirement. If you have, then you can graduate. But if you have not, you need to earn those credits to graduate.
 
  
-### Question
+### Question 48
 I have received an offer to attend an international conference but lack funding. What school funds can I apply for?
 
 ### Context
@@ -776,7 +776,7 @@ unexpected setbacks. Securing resources Based on your list above you should proc
 You can apply for the FUV student research fund to help fund your participation in the international conference.
 
  
-### Question
+### Question 49
 What is the maximum number of credits I can transfer from another university after officially enrolling at Fulbright?
 
 ### Context
@@ -790,7 +790,7 @@ with an undergraduate degree from Fulbright, a student must earn a minimum of 12
 The maximum number of credits that can be transferred and credited to a Fulbright undergraduate degree is 64.
 
  
-### Question
+### Question 50
 In a regular semester, can I take only 2 courses? If so, how will my tuition fees be affected?
 
 ### Context
@@ -804,7 +804,7 @@ circumstances (see Section 12), and it requires supporting documentation as well
 Yes, you can take only 2 courses in a regular semester, but you will still be considered a full-time student as long as you are registering for a minimum of 12 credits. However, no reduction in tuition will be granted if your course withdrawal results in fewer than 12 academic credits.
 
  
-### Question
+### Question 51
 Can I pursue 3 majors?
 
 ### Context
