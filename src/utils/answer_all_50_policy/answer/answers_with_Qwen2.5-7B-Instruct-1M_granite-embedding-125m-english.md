@@ -1,4 +1,3 @@
-
 # Experiment Results
 
 ## Model: Qwen/Qwen2.5-7B-Instruct-1M with ibm-granite/granite-embedding-125m-english
