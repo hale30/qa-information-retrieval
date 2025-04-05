@@ -62,7 +62,7 @@ def main():
                     print("-" * 50)
 
                     # Append results to markdown content
-                    markdown_content += f"### Question {i}: {question} \n### Context {context} \n### Response {response}\n"
+                    markdown_content += f"### Question {i}: {question} \n ### Response {response}\n ### Context \n{context} \n"
                 except torch.cuda.OutOfMemoryError:
                     print("Cuda is out of memory!!! Continue to the next question.")
                     print("-" * 50)
