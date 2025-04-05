@@ -1,4 +1,3 @@
-import datetime
 import os
 os.environ['HF_HOME'] = '/mnt/data/thomas/.cache' #Used to change where to save model. Uncomment this if you want to use default location
 import fitz
@@ -261,30 +260,6 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
     # print("\n=== RESPONSE ===\n", response[len(prompt):].strip())
     return context, response[len(prompt):].strip()
 
-# def concatenate_paragraphs(lines):
-#     paragraphs = []
-#     current_paragraph = ""
-#
-#     for line in lines:
-#         stripped = line.strip()
-#
-#         # If it's a section header, start a new paragraph
-#         if stripped and (stripped[0].isdigit() or stripped.startswith("•")):
-#             if current_paragraph:
-#                 paragraphs.append(current_paragraph)
-#                 current_paragraph = stripped
-#             # paragraphs.append(stripped)
-#         # Continue building the paragraph
-#         elif current_paragraph and (current_paragraph[-1] in ".:" or stripped[0].isupper()):
-#             paragraphs.append(current_paragraph)
-#             current_paragraph = stripped
-#         else:
-#             current_paragraph += " " + stripped if current_paragraph else stripped
-#
-#     if current_paragraph:
-#         paragraphs.append(current_paragraph)
-#
-#     return paragraphs
 
 
 def prepare_question():
@@ -292,108 +267,5 @@ def prepare_question():
         "Is it possible to graduate with double majors in HCE and Applied Mathematics? If yes, please provide a sample study plan.",
     ]
     return list_questions
-
-
-def main():
-    save_folder = "answer_just_major_old_new_policy"
-    answer_path = os.path.join(save_folder, "answer")
-    database_path = os.path.join(save_folder, "database")
-    data_path = "/home/thomas/Downloads/qa-information-retrieval/data"
-    os.makedirs(answer_path, exist_ok=True)
-    os.makedirs(database_path, exist_ok=True)
-
-    # Define embedding models to be tested
-    embedding_models = [
-        # "Alibaba-NLP/gte-multilingual-base",
-        # "ibm-granite/granite-embedding-125m-english",
-        # "NovaSearch/stella_en_400M_v5",
-        # "jinaai/jina-embeddings-v3",
-        "NovaSearch/jasper_en_vision_language_v1",
-        "w601sxs/b1ade-embed"
-    ]
-
-    # Define LLM models to be tested
-    llm_models = [
-        "mistralai/Mistral-7B-Instruct-v0.3",
-        "allenai/Llama-3.1-Tulu-3-8B",
-        "Qwen/Qwen2.5-7B-Instruct-1M",
-        # "upstage/solar-pro-preview-instruct",
-        # "Cran-May/tempmotacilla-cinerea-0308"
-    ]
-
-    # Load and preprocess the PDF document
-    data = load_data(data_path)
-    chunks = chunk_paragraphs(data)  # Chunk text into manageable pieces
-
-
-    for embedding_model in embedding_models:
-        embedding_name = embedding_model.split("/")[-1]
-
-        # Build vectorstore for each embedding model
-        vectorstore = build_vectorstore(chunks, persist_path=os.path.join(database_path, embedding_name),
-                                        model_name=embedding_model)
-        print("✅ Vectorstore built and persisted.")
-
-        for llm_model in llm_models:
-            llm_name = llm_model.split("/")[-1]
-
-            print(f"-"*30 + f"Answer with {embedding_name} and {llm_name}" + "-"*30)
-
-            # Load the selected LLM model
-            try:
-                llm_pipe = load_local_llm(llm_model)
-            except torch.cuda.OutOfMemoryError:
-                print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
-
-            # Prepare questions to ask the model
-            list_questions = prepare_question()
-            # Initialize markdown content for results
-            markdown_content = f"""
-# Experiment Results
-
-## Model: {llm_model} with {embedding_model}
-            """
-            for question in list_questions:
-                try:
-                    # Get response from the LLM
-                    context, response = ask_question(llm_pipe, vectorstore, question)
-                    print(response)
-                    print("-" * 50)
-
-                    # Append results to markdown content
-                    markdown_content += f"""
-                
-    ### Question
-    {question}
-    
-    ### Context
-    {context}
-    
-    ### Response
-    {response}
-    """
-                except torch.cuda.OutOfMemoryError:
-                    print("Cuda is out of memory!!! Continue to the next question.")
-                    print("-"*50)
-                    markdown_content += f"""
-    ### Question
-    {question}
-    Cuda is out of memory!!!! Continue
-    """
-
-            # Free up CUDA memory after processing each model
-            free_cuda_memory()
-
-            # Save markdown file with experiment results
-            # timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(answer_path, f"answers_with_{llm_name}_{embedding_name}.md")
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(markdown_content)
-
-            print(f"Markdown file saved at: {file_path}")
-
-
-if __name__ == "__main__":
-    main()
 
 
