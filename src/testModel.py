@@ -12,18 +12,18 @@ def main():
 
     # Define embedding models to be tested
     embedding_models = [
-        "Alibaba-NLP/gte-multilingual-base",
-        "ibm-granite/granite-embedding-125m-english",
-        "NovaSearch/stella_en_400M_v5",
+        # "Alibaba-NLP/gte-multilingual-base",
+        # "ibm-granite/granite-embedding-125m-english",
+        # "NovaSearch/stella_en_400M_v5",
         "jinaai/jina-embeddings-v3",
-        "NovaSearch/jasper_en_vision_language_v1",
-        "w601sxs/b1ade-embed"
+        # "NovaSearch/jasper_en_vision_language_v1",
+        # "w601sxs/b1ade-embed"
     ]
 
     # Define LLM models to be tested
     llm_models = [
-        "mistralai/Mistral-7B-Instruct-v0.3",
-        "allenai/Llama-3.1-Tulu-3-8B",
+        # "mistralai/Mistral-7B-Instruct-v0.3",
+        # "allenai/Llama-3.1-Tulu-3-8B",
         "Qwen/Qwen2.5-7B-Instruct-1M",
     ]
 
@@ -53,12 +53,8 @@ def main():
             # Prepare questions to ask the model
             list_questions = prepare_question()
             # Initialize markdown content for results
-            markdown_content = f"""
-# Experiment Results
-
-## Model: {llm_model} with {embedding_model}
-            """
-            for question in list_questions:
+            markdown_content = f"""# Experiment Results\n## Model: {llm_model} with {embedding_model}\n"""
+            for i, question in enumerate(list_questions, start=1):
                 try:
                     # Get response from the LLM
                     context, response = ask_question(llm_pipe, vectorstore, question)
@@ -66,25 +62,11 @@ def main():
                     print("-" * 50)
 
                     # Append results to markdown content
-                    markdown_content += f"""
-
-    ### Question
-    {question}
-
-    ### Context
-    {context}
-
-    ### Response
-    {response}
-    """
+                    markdown_content += f"### Question {i}: {question} \n### Context {context} \n### Response {response}\n"
                 except torch.cuda.OutOfMemoryError:
                     print("Cuda is out of memory!!! Continue to the next question.")
                     print("-" * 50)
-                    markdown_content += f"""
-    ### Question
-    {question}
-    Cuda is out of memory!!!! Continue
-    """
+                    markdown_content += f"""### Question {i}: {question}\n Cuda is out of memory!!!! Continue"""
 
             # Free up CUDA memory after processing each model
             free_cuda_memory()

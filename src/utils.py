@@ -27,6 +27,7 @@ def clean_capstone(pdf_path):
     Cleans the Capstone PDF by removing unwanted lines and extracting sections.
     """
     doc = fitz.open(pdf_path)
+    filename = os.path.basename(pdf_path)
     exact_removal = {
         "Fulbright University Vietnam Ground Floor, 105 Ton Dat Tien, Tan Phu, Quan 7, Ho Chi Minh City"
     }
@@ -55,10 +56,10 @@ def clean_capstone(pdf_path):
         r"^(\d+|[IVXLCDM]+)\.\s*(?!(" + "|".join(re.escape(verb) for verb in banned_verbs) + r")\b)[A-Z]"
     )
 
-    for page in doc:
+    for page_num, page in enumerate(doc, start = 1):
         raw_paragraphs = [p.strip() for p in page.get_text().split("\n") if p.strip()]
         filtered = []
-
+        current_page_number = page_num
         for p in raw_paragraphs:
             if p in exact_removal or p.lower().startswith("internal") or p.isdigit():
                 continue
@@ -80,7 +81,11 @@ def clean_capstone(pdf_path):
             if full_section_pattern.match(line):
                 if current_section_title:
                     joined_content = " ".join(current_section_content)
-                    sections.append(f"{current_section_title}: {joined_content}")
+                    sections.append({
+                        "text": f"{current_section_title}: {joined_content}",
+                        "source": filename,
+                        "page": page_num
+                    })
                 current_section_title = line
                 current_section_content = []
             else:
@@ -90,16 +95,18 @@ def clean_capstone(pdf_path):
 
     if current_section_title and current_section_content:
         joined_content = " ".join(current_section_content)
-        sections.append(f"{current_section_title}: {joined_content}")
+        sections.append({
+            "text": f"{current_section_title}: {joined_content}",
+            "source": filename,
+            "page": page_num
+        })
 
     return sections
 
 
 def clean_majordescription(pdf_path):
-    """
-    Cleans the Major Description PDF by removing unwanted lines and extracting sections.
-    """
     doc = fitz.open(pdf_path)
+    filename = os.path.basename(pdf_path)
     exact_removal = {
         "Fulbright University Vietnam Ground Floor, 105 Ton Dat Tien, Tan Phu, Quan 7, Ho Chi Minh City"
     }
@@ -107,21 +114,14 @@ def clean_majordescription(pdf_path):
     sections = []
     current_section_title = None
     current_section_content = []
+
     wanted_section_titles = [
-        "APPLIED MATHEMATICS",
-        "ARTS AND MEDIA STUDIES",
-        "COMPUTER SCIENCE",
-        "ECONOMICS",
-        "HUMAN-CENTERED ENGINEERING",
-        "HISTORY",
-        "PSYCHOLOGY",
-        "INTEGRATED SCIENCES",
-        "LITERATURE",
-        "SOCIAL STUDIES",
-        "VIETNAM STUDIES",
+        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "COMPUTER SCIENCE", "ECONOMICS",
+        "HUMAN-CENTERED ENGINEERING", "HISTORY", "PSYCHOLOGY", "INTEGRATED SCIENCES",
+        "LITERATURE", "SOCIAL STUDIES", "VIETNAM STUDIES"
     ]
 
-    for page in doc:
+    for page_num, page in enumerate(doc, start=1):
         raw_paragraphs = [p.strip() for p in page.get_text().split("\n") if p.strip()]
         filtered = []
 
@@ -133,28 +133,33 @@ def clean_majordescription(pdf_path):
             filtered.append(p)
 
         for line in filtered:
-            if line in wanted_section_titles:  # Section header
-                if current_section_title:  # Save the previous section
+            if line in wanted_section_titles:
+                if current_section_title:
                     joined_content = " ".join(current_section_content)
-                    sections.append(f"{current_section_title}: {joined_content}")
+                    sections.append({
+                        "text": f"{current_section_title}: {joined_content}",
+                        "source": filename,
+                        "page": page_num
+                    })
                 current_section_title = line
                 current_section_content = []
             else:
                 current_section_content.append(line)
 
-    # Save the last section
     if current_section_title and current_section_content:
         joined_content = " ".join(current_section_content)
-        sections.append(f"{current_section_title}: {joined_content}")
+        sections.append({
+            "text": f"{current_section_title}: {joined_content}",
+            "source": filename,
+            "page": page_num
+        })
 
     return sections
 
 
 def clean_aapolicy(pdf_path):
-    """
-    Cleans the Academic Policy PDF by removing unwanted lines and extracting sections.
-    """
     doc = fitz.open(pdf_path)
+    filename = os.path.basename(pdf_path)
     exact_removal = {
         "Fulbright University Vietnam Ground Floor, 105 Ton Dat Tien, Tan Phu, Quan 7, Ho Chi Minh City"
     }
@@ -163,7 +168,7 @@ def clean_aapolicy(pdf_path):
     current_section_title = None
     current_section_content = []
 
-    for page in doc:
+    for page_num, page in enumerate(doc, start=1):
         raw_paragraphs = [p.strip() for p in page.get_text().split("\n") if p.strip()]
         filtered = []
 
@@ -175,38 +180,42 @@ def clean_aapolicy(pdf_path):
             filtered.append(p)
 
         for line in filtered:
-            if line.isupper():  # Section header
-                if current_section_title:  # Save the previous section
+            if line.isupper():
+                if current_section_title:
                     joined_content = " ".join(current_section_content)
-                    sections.append(f"{current_section_title}: {joined_content}")
+                    sections.append({
+                        "text": f"{current_section_title}: {joined_content}",
+                        "source": filename,
+                        "page": page_num
+                    })
                 current_section_title = line
                 current_section_content = []
             else:
                 current_section_content.append(line)
 
-    # Save the last section
     if current_section_title and current_section_content:
         joined_content = " ".join(current_section_content)
-        sections.append(f"{current_section_title}: {joined_content}")
+        sections.append({
+            "text": f"{current_section_title}: {joined_content}",
+            "source": filename,
+            "page": page_num
+        })
 
     return sections
-
 
 def load_data(folder_path):
     filenames = os.listdir(folder_path)
     data = []
     for file in filenames:
+        file_path = os.path.join(folder_path, file)
         if "major" in file.lower():
             print("Major")
-            file_path = os.path.join(folder_path, file)
             data.extend(clean_majordescription(file_path))
         elif "capstone" in file.lower():
             print("Capstone")
-            file_path = os.path.join(folder_path, file)
             data.extend(clean_capstone(file_path))
         elif "academic" in file.lower():
             print("AA Policy")
-            file_path = os.path.join(folder_path, file)
             data.extend(clean_aapolicy(file_path))
         else:
             print(f"File {file} not in categories. Skip!!!!")
@@ -215,12 +224,22 @@ def load_data(folder_path):
     return data
 
 
-def chunk_paragraphs(paragraphs):
+def chunk_paragraphs(paragraphs_with_meta):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=512)
-    return splitter.split_text("\n\n".join(paragraphs))
+    all_chunks = []
+    for item in paragraphs_with_meta:
+        text = item["text"]
+        metadata = {
+            "source": item.get("source", "unknown"),
+            "page": item.get("page", -1)
+        }
+        chunks = splitter.create_documents([text], metadatas=[metadata])
+        all_chunks.extend(chunks)
+    return all_chunks
+
 
 # === Step 3: Build vector store ===
-def build_vectorstore(chunks, persist_path="./answer_all_policy/database/chroma_fulbright2", model_name = "Alibaba-NLP/gte-multilingual-base"):
+def build_vectorstore(chunks, persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
     documents = [Document(page_content=chunk) for chunk in chunks]
     # print(type(documents[0]))
     embedding_model = HuggingFaceEmbeddings(model_name= model_name)
@@ -250,15 +269,19 @@ def load_local_llm(model_id="Qwen/Qwen2.5-7B-Instruct-1M"):
 # === Step 5: Ask questions ===
 def ask_question(llm_pipe, vectorstore, query, top_k=3):
     docs = vectorstore.similarity_search(query, k=top_k)
-    context = "\n\n".join([doc.page_content for doc in docs])
 
-    prompt = f"""Answer the question based on the following context:\n\n{context}\n\nQuestion: {query}\nAnswer:"""
+    formatted_context = ""
+    raw_context = ""
+    for doc in docs:
+        source = doc.metadata.get("source", "unknown")
+        page = doc.metadata.get("page", "?")
+        formatted_context += f"[Source: {source}, Page: {page}]\n{doc.page_content.strip()}\n\n"
+        raw_context += doc.page_content.strip() + "\n"
 
-    # print("\n=== PROMPT ===\n", prompt)
+    prompt = f"""Answer the question based on the following context:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
 
     response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
-    # print("\n=== RESPONSE ===\n", response[len(prompt):].strip())
-    return context, response[len(prompt):].strip()
+    return formatted_context.strip(), response[len(prompt):].strip()
 
 
 
