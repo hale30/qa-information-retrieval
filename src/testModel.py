@@ -1,4 +1,4 @@
-from utils.Utils import *
+from utils import *
 import torch
 import os
 
