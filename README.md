@@ -2,10 +2,14 @@
 
 TODO:
 - [x] Implement full pipline of RAG: embedding, vectorstore and LLM.
-- [ ] Work on universal ways to preprocess data. For now it is done for AA policy.
-- [ ] Finetune different embedding model and LLM models.
-- [ ] Pick optimal chunk size for context.
-- [ ] ...
+- [x] Work on universal ways to preprocess data. For now it is done for AA policy.
+- [x] Finetune different embedding model and LLM models.
+- [x] Pick optimal chunk size for context.
+- [x] Structure context generation.
+- [x] Inspect why the current output context contains repetitive paragraphs.
+- [ ] Do research on possible (optimal) ways to index database.
+- [ ] Find ways to resolve conflicts among document (if any).
+- [ ] ... 
 
 
 ## Note on running RAG_Pipeline.ipynb
