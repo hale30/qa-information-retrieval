@@ -241,14 +241,13 @@ def chunk_paragraphs(paragraphs_with_meta):
 
 # === Step 3: Build vector store ===
 def build_vectorstore(chunks, persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
-    documents = [Document(page_content=chunk) for chunk in chunks]
     # print(type(documents[0]))
     embedding_model = HuggingFaceEmbeddings(model_name= model_name)
     # model_name_or_path = "Alibaba-NLP/gte-multilingual-base"
     # tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     # model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True)
     vectorstore = Chroma.from_documents(
-        documents=documents,
+        documents=chunks,
         embedding=embedding_model,
         persist_directory=persist_path
     )
