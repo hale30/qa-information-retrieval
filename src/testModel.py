@@ -3,27 +3,27 @@ import torch
 import os
 
 def main():
-    save_folder = "answer_just_major_old_new_policy" # Change the name of the folder to save the output
-    answer_path = os.path.join(save_folder, "answer")
-    database_path = os.path.join(save_folder, "database")
-    data_path = "/home/thomas/Downloads/qa-information-retrieval/data" # Change the path to your data file
+    save_folder = "../answer" # Change the name of the folder to save the output
+    data_path = "../data"  # Change the path to your data file
+    answer_path = os.path.join(save_folder)
+    database_path = os.path.join(data_path, "database")
     os.makedirs(answer_path, exist_ok=True)
     os.makedirs(database_path, exist_ok=True)
 
     # Define embedding models to be tested
     embedding_models = [
-        # "Alibaba-NLP/gte-multilingual-base",
-        # "ibm-granite/granite-embedding-125m-english",
-        # "NovaSearch/stella_en_400M_v5",
+        "Alibaba-NLP/gte-multilingual-base",
+        "ibm-granite/granite-embedding-125m-english",
+        "NovaSearch/stella_en_400M_v5",
         "jinaai/jina-embeddings-v3",
-        # "NovaSearch/jasper_en_vision_language_v1",
-        # "w601sxs/b1ade-embed"
+        "NovaSearch/jasper_en_vision_language_v1",
+        "w601sxs/b1ade-embed"
     ]
 
     # Define LLM models to be tested
     llm_models = [
-        # "mistralai/Mistral-7B-Instruct-v0.3",
-        # "allenai/Llama-3.1-Tulu-3-8B",
+        "mistralai/Mistral-7B-Instruct-v0.3",
+        "allenai/Llama-3.1-Tulu-3-8B",
         "Qwen/Qwen2.5-7B-Instruct-1M",
     ]
 
@@ -51,7 +51,7 @@ def main():
                 print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
 
             # Prepare questions to ask the model
-            list_questions = prepare_question()
+            list_questions = prepare_question("../qna/questions.json")
             # Initialize markdown content for results
             markdown_content = f"""# Experiment Results\n## Model: {llm_model} with {embedding_model}\n"""
             for i, question in enumerate(list_questions, start=1):
