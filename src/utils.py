@@ -136,8 +136,6 @@ def clean_majordescription(pdf_path):
         for line in filtered:
             if line in wanted_section_titles:
                 if current_section_title and current_section_title != "COMPUTER SCIENCE":
-
-                if current_section_title:
                     joined_content = " ".join(current_section_content)
                     sections.append({
                         "text": f"{current_section_title}: {joined_content}",
