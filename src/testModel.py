@@ -3,9 +3,9 @@ import torch
 import os
 
 def main():
-    save_folder = "/home/thomas/Downloads/qa-information-retrieval_2/data" # Change the name of the folder to save the output
+    save_folder = "/home/thomas/Downloads/qa-information-retrieval_2/data/" # Change the name of the folder to save the output
     answer_path = os.path.join(save_folder, "answer_1")
-    database_path = os.path.join(save_folder, "database")
+    database_path = os.path.join(save_folder, "database_no_student_journey")
     data_path = "/home/thomas/Downloads/qa-information-retrieval_2/data/documents" # Change the path to your data file
     os.makedirs(answer_path, exist_ok=True)
     os.makedirs(database_path, exist_ok=True)
@@ -51,13 +51,13 @@ def main():
                 print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
 
             # Prepare questions to ask the model
-            list_questions = prepare_question("/home/thomas/Downloads/qa-information-retrieval_2/data/questions.json")
+            list_questions = prepare_question("/home/thomas/Downloads/qa-information-retrieval_2/data/questions_wrong_context.json")
             # Initialize markdown content for results
             markdown_content = f"""# Experiment Results\n## Model: {llm_model} with {embedding_model}\n"""
             for i, question in enumerate(list_questions, start=1):
                 try:
                     # Get response from the LLM
-                    context, response = ask_question(llm_pipe, vectorstore, question)
+                    context, response = ask_question(llm_pipe, vectorstore, question, top_k = 5)
                     print(response)
                     print("-" * 50)
                     markdown_content += f"""### Question {i}: {question}  
