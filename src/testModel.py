@@ -3,10 +3,10 @@ import torch
 import os
 
 def main():
-    save_folder = "answer_just_major_old_new_policy" # Change the name of the folder to save the output
-    answer_path = os.path.join(save_folder, "answer")
+    save_folder = "/home/thomas/Downloads/qa-information-retrieval_2/data" # Change the name of the folder to save the output
+    answer_path = os.path.join(save_folder, "answer_1")
     database_path = os.path.join(save_folder, "database")
-    data_path = "/home/thomas/Downloads/qa-information-retrieval/data" # Change the path to your data file
+    data_path = "/home/thomas/Downloads/qa-information-retrieval_2/data/documents" # Change the path to your data file
     os.makedirs(answer_path, exist_ok=True)
     os.makedirs(database_path, exist_ok=True)
 
@@ -51,7 +51,7 @@ def main():
                 print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
 
             # Prepare questions to ask the model
-            list_questions = prepare_question()
+            list_questions = prepare_question("/home/thomas/Downloads/qa-information-retrieval_2/data/questions.json")
             # Initialize markdown content for results
             markdown_content = f"""# Experiment Results\n## Model: {llm_model} with {embedding_model}\n"""
             for i, question in enumerate(list_questions, start=1):
@@ -64,18 +64,18 @@ def main():
                     # Append results to markdown content
                     # markdown_content += f"### Question {i}: {question} \n ### Response: \n {response}\n ### Context \n{context} \n"
                     markdown_content += f"""### Question {i}: {question}  
-                    ### Answer: 
+### Answer: 
 
-                    {response}  
+{response}  
 
-                    <details>  
-                    <summary>References:</summary>  
+<details>  
+<summary>References:</summary>  
 
-                    {context}  
+{context}  
 
-                    </details> 
+</details> 
 
-                    """
+"""
                 except torch.cuda.OutOfMemoryError:
                     print("Cuda is out of memory!!! Continue to the next question.")
                     print("-" * 50)
