@@ -224,6 +224,28 @@ def load_data(folder_path):
 
     return data
 
+def debrief_name(string):
+    replacements = {
+        "hce": "Human-Centered Engineering",
+        "cs": "Computer Science",
+        "cs1": "Computer Science 1",
+        "cs2": "Computer Science 2",
+        "mvcs": "Modern Vietnamese Culture and Society",
+        "si": "Scientific Inquiry",
+        "dst": "Design System Thinking",
+        "gh": "Global Humanity and Social Changes",
+        "econ1": "Principle of Economics 1",
+        "econ2": "Principle of Economics 2",
+        "micro": "Microeconomics Analysis",
+        "macro": "Macroeconomics Analysis"
+    }
+
+    # Use regex to replace whole words only, case-insensitively
+    for short, full in replacements.items():
+        pattern = r'\b' + re.escape(short) + r'\b'
+        string = re.sub(pattern, full, string, flags=re.IGNORECASE)
+
+    return string
 
 def chunk_paragraphs(paragraphs_with_meta):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=512)
@@ -294,4 +316,6 @@ def prepare_question(json_file_path):
         data = json.load(file)
 
     questions = data.get("question", [])
+    for question in questions:
+        question = debrief_name(question)
     return questions

@@ -66,7 +66,7 @@ def main():
 {response}  
 
 <details>  
-<summary>References:</summary>  
+<summary>References</summary>  
 
 {context}  
 
