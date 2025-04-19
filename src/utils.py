@@ -209,7 +209,10 @@ def load_data(folder_path):
     data = []
     for file in filenames:
         file_path = os.path.join(folder_path, file)
-        if "major" in file.lower():
+        if "CS_major_handbook.pdf" in file:
+            data.extend(clean_capstone(file_path))
+            print(f"CS_major_handbook.pdf")
+        elif "major" in file.lower():
             print("Major")
             data.extend(clean_majordescription(file_path))
         elif "capstone" in file.lower():
@@ -219,8 +222,7 @@ def load_data(folder_path):
             print("AA Policy")
             data.extend(clean_aapolicy(file_path))
         else:
-            print(f"File {file} not in categories. Skip!!!!")
-            continue
+            print(f"File {file} is not supported!!!!!!!!")
 
     return data
 
@@ -284,7 +286,8 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
 
     prompt = f"""Answer the question based on the following context:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
 
-    response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
+    # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
+    response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.1)[0]["generated_text"]
     return formatted_context.strip(), response[len(prompt):].strip()
 
 

@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="101aefb1-dc3d-4c43-845e-ae3c9cd099b5" name="Changes" comment="Change chunk overlap to 0">
-      <change afterPath="$PROJECT_DIR$/data/questions_wrong_context.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/index_metadata.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/chroma.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/documents/Major Descriptions and Flowcharts December 2021_211220.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/answer_1/answers_with_Qwen2.5-7B-Instruct-1M_jina-embeddings-v3.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/answer_1/answers_with_Qwen2.5-7B-Instruct-1M_jina-embeddings-v3.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/chroma.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/eb1717c2-69c2-415b-bbb3-4faf248da2c8/data_level0.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/eb1717c2-69c2-415b-bbb3-4faf248da2c8/header.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/eb1717c2-69c2-415b-bbb3-4faf248da2c8/length.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/eb1717c2-69c2-415b-bbb3-4faf248da2c8/link_lists.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/questions_wrong_context.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/questions_wrong_context.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +64,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.testModel.executor": "Run",
+    "Python.utils.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "indexing__database",
@@ -104,7 +103,7 @@
       <workItem from="1744640246736" duration="579000" />
       <workItem from="1744640953399" duration="4664000" />
       <workItem from="1744993226357" duration="113000" />
-      <workItem from="1745028169479" duration="16977000" />
+      <workItem from="1745028169479" duration="18685000" />
     </task>
     <task id="LOCAL-00001" summary="Upload the new answer">
       <option name="closed" value="true" />
@@ -167,13 +166,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/utils.py</url>
-          <line>233</line>
+          <line>235</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/utils.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/qa_information_retrieval_2$testModel.coverage" NAME="testModel Coverage Results" MODIFIED="1745047583733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/qa_information_retrieval_2$utils.coverage" NAME="utils Coverage Results" MODIFIED="1745048636644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/qa_information_retrieval_2$testModel.coverage" NAME="testModel Coverage Results" MODIFIED="1745049555053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
