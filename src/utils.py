@@ -117,7 +117,7 @@ def clean_majordescription(pdf_path):
     current_section_content = []
 
     wanted_section_titles = [
-        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "COMPUTER SCIENCE", "ECONOMICS",
+        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "ECONOMICS", "COMPUTER SCIENCE",
         "HUMAN-CENTERED ENGINEERING", "HISTORY", "PSYCHOLOGY", "INTEGRATED SCIENCES",
         "LITERATURE", "SOCIAL STUDIES", "VIETNAM STUDIES"
     ]
@@ -135,7 +135,7 @@ def clean_majordescription(pdf_path):
 
         for line in filtered:
             if line in wanted_section_titles:
-                if current_section_title:
+                if current_section_title and current_section_title != "COMPUTER SCIENCE":
                     joined_content = " ".join(current_section_content)
                     sections.append({
                         "text": f"{current_section_title}: {joined_content}",
@@ -143,11 +143,11 @@ def clean_majordescription(pdf_path):
                         "page": page_num
                     })
                 current_section_title = line
-                current_section_content = []
-            else:
+                current_section_content = [] if current_section_title != "COMPUTER SCIENCE" else None
+            elif current_section_title != "COMPUTER SCIENCE" and current_section_content is not None:
                 current_section_content.append(line)
 
-    if current_section_title and current_section_content:
+    if current_section_title and current_section_title != "COMPUTER SCIENCE":
         joined_content = " ".join(current_section_content)
         sections.append({
             "text": f"{current_section_title}: {joined_content}",
@@ -156,7 +156,6 @@ def clean_majordescription(pdf_path):
         })
 
     return sections
-
 
 def clean_aapolicy(pdf_path):
     doc = fitz.open(pdf_path)
@@ -209,7 +208,10 @@ def load_data(folder_path):
     data = []
     for file in filenames:
         file_path = os.path.join(folder_path, file)
-        if "major" in file.lower():
+        if "CS_major_handbook.pdf" in file:
+            data.extend(clean_capstone(file_path))
+            print(f"CS_major_handbook.pdf")
+        elif "major" in file.lower():
             print("Major")
             data.extend(clean_majordescription(file_path))
         elif "capstone" in file.lower():
@@ -219,36 +221,67 @@ def load_data(folder_path):
             print("AA Policy")
             data.extend(clean_aapolicy(file_path))
         else:
-            print(f"File {file} not in categories. Skip!!!!")
-            continue
+            print(f"File {file} is not supported!!!!!!!!")
 
     return data
 
+def debrief_name(string):
+    replacements = {
+        "hce": "Human-Centered Engineering",
+        "cs": "Computer Science",
+        "cs1": "Computer Science 1",
+        "cs2": "Computer Science 2",
+        "mvcs": "Modern Vietnamese Culture and Society",
+        "si": "Scientific Inquiry",
+        "dst": "Design and System Thinking",
+        "gh": "Global Humanity and Social Changes",
+        "econ1": "Principle of Economics 1",
+        "econ2": "Principle of Economics 2",
+        "micro": "Microeconomics Analysis",
+        "macro": "Macroeconomics Analysis"
+    }
+
+    # Use regex to replace whole words only, case-insensitively
+    for short, full in replacements.items():
+        pattern = r'\b' + re.escape(short) + r'\b'
+        string = re.sub(pattern, full, string, flags=re.IGNORECASE)
+
+    return string
 
 def chunk_paragraphs(paragraphs_with_meta):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=512)
     all_chunks = []
+
     for item in paragraphs_with_meta:
-        text = item["text"]
+        text = item.get("text", "")
         metadata = {
             "source": item.get("source", "unknown"),
             "page": item.get("page", -1)
         }
         chunks = splitter.create_documents([text], metadatas=[metadata])
-        all_chunks.extend(chunks)
+        filtered_chunks = [chunk for chunk in chunks if "Sample Student Journey" not in chunk.page_content]
+
+        all_chunks.extend(filtered_chunks)
+
     return all_chunks
 
 
 # === Step 3: Build vector store ===
-def build_vectorstore(chunks, persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
+def build_vectorstore(chunks = "", persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
     # print(type(documents[0]))
     embedding_model = HuggingFaceEmbeddings(model_name= model_name)
     # model_name_or_path = "Alibaba-NLP/gte-multilingual-base"
     # tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     # model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True)
-    vectorstore = Chroma.from_documents(
-        documents=chunks,
-        embedding=embedding_model,
+
+    # vectorstore = Chroma.from_documents(
+    #     documents=chunks,
+    #     embedding=embedding_model,
+    #     persist_directory=persist_path
+    # )
+
+    vectorstore = Chroma(
+        embedding_function=embedding_model,
         persist_directory=persist_path
     )
     vectorstore.persist()
@@ -278,9 +311,11 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
         formatted_context += f"[Source: {source}, Page: {page}]\n{doc.page_content.strip()}\n\n"
         raw_context += doc.page_content.strip() + "\n"
 
-    prompt = f"""Answer the question based on the following context:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
+    prompt = f"""Answer the question based on the following contexts. Say that the references are irrelevant to the question if necessary. Stop when you have nothing else to say:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
 
-    response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
+    # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
+    # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.1)[0]["generated_text"]
+    response = llm_pipe(prompt, max_new_tokens=1024, temperature=0.1)[0]["generated_text"]
     return formatted_context.strip(), response[len(prompt):].strip()
 
 
@@ -290,4 +325,8 @@ def prepare_question(json_file_path):
         data = json.load(file)
 
     questions = data.get("question", [])
-    return questions
+    new_questions = []
+    for question in questions:
+        question = debrief_name(question)
+        new_questions.append(question)
+    return new_questions
