@@ -228,16 +228,18 @@ def load_data(folder_path):
 def chunk_paragraphs(paragraphs_with_meta):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=512)
     all_chunks = []
+
     for item in paragraphs_with_meta:
-        text = item["text"]
-        if "Sample Student Journey" in text:
-            continue
+        text = item.get("text", "")
         metadata = {
             "source": item.get("source", "unknown"),
             "page": item.get("page", -1)
         }
         chunks = splitter.create_documents([text], metadatas=[metadata])
-        all_chunks.extend(chunks)
+        filtered_chunks = [chunk for chunk in chunks if "Sample Student Journey" not in chunk.page_content]
+
+        all_chunks.extend(filtered_chunks)
+
     return all_chunks
 
 
