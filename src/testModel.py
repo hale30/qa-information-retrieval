@@ -28,14 +28,14 @@ def main():
     ]
 
     # Load and preprocess the PDF document
-    # data = load_data(data_path)
-    # chunks = chunk_paragraphs(data)  # Chunk text into manageable pieces
+    data = load_data(data_path)
+    chunks = chunk_paragraphs(data)  # Chunk text into manageable pieces
 
     for embedding_model in embedding_models:
         embedding_name = embedding_model.split("/")[-1]
 
         # Build vectorstore for each embedding model
-        vectorstore = build_vectorstore(persist_path=os.path.join(database_path, embedding_name),
+        vectorstore = build_vectorstore(chunks = chunks, persist_path=os.path.join(database_path, embedding_name),
                                         model_name=embedding_model)
         print("✅ Vectorstore built and persisted.")
 
