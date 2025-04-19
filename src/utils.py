@@ -5,11 +5,11 @@ import re
 import gc
 import torch
 import json
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
-from langchain.docstore.document import Document
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from langchain.vectorstores import Chroma
+# from langchain.docstore.document import Document
+# from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+# from langchain_huggingface import HuggingFaceEmbeddings
 
 def free_cuda_memory():
     """Function to release all CUDA memory and clear PyTorch cache."""
@@ -319,6 +319,8 @@ def prepare_question(json_file_path):
         data = json.load(file)
 
     questions = data.get("question", [])
+    new_questions = []
     for question in questions:
         question = debrief_name(question)
-    return questions
+        new_questions.append(question)
+    return new_questions
