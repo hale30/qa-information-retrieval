@@ -117,7 +117,7 @@ def clean_majordescription(pdf_path):
     current_section_content = []
 
     wanted_section_titles = [
-        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "COMPUTER SCIENCE", "ECONOMICS",
+        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "ECONOMICS",
         "HUMAN-CENTERED ENGINEERING", "HISTORY", "PSYCHOLOGY", "INTEGRATED SCIENCES",
         "LITERATURE", "SOCIAL STUDIES", "VIETNAM STUDIES"
     ]
@@ -231,8 +231,6 @@ def chunk_paragraphs(paragraphs_with_meta):
 
     for item in paragraphs_with_meta:
         text = item.get("text", "")
-        if "COMPUTER SCIENCE" in text:
-            continue
         metadata = {
             "source": item.get("source", "unknown"),
             "page": item.get("page", -1)
