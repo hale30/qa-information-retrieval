@@ -231,6 +231,8 @@ def chunk_paragraphs(paragraphs_with_meta):
 
     for item in paragraphs_with_meta:
         text = item.get("text", "")
+        if "COMPUTER SCIENCE":
+            continue
         metadata = {
             "source": item.get("source", "unknown"),
             "page": item.get("page", -1)
