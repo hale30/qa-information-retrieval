@@ -230,6 +230,8 @@ def chunk_paragraphs(paragraphs_with_meta):
     all_chunks = []
     for item in paragraphs_with_meta:
         text = item["text"]
+        if "Sample Student Journey" in text:
+            continue
         metadata = {
             "source": item.get("source", "unknown"),
             "page": item.get("page", -1)

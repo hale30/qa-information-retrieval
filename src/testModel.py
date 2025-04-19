@@ -60,9 +60,6 @@ def main():
                     context, response = ask_question(llm_pipe, vectorstore, question)
                     print(response)
                     print("-" * 50)
-
-                    # Append results to markdown content
-                    # markdown_content += f"### Question {i}: {question} \n ### Response: \n {response}\n ### Context \n{context} \n"
                     markdown_content += f"""### Question {i}: {question}  
 ### Answer: 
 
