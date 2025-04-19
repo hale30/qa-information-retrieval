@@ -3,7 +3,11 @@
 ### Question 1: Can I take 160 credits in four years given that I pay for the full tuition fee?  
 ### Answer: 
 
-Based on the information provided, you cannot take 160 credits in four years. The typical full-time course load is 16 credit hours per term, which means you would be taking 64 credits per year (16 credits x 4 terms = 64 credits). Even if you take the maximum load of 20 credits per term, you would still only accumulate 80 credits per year (20 credits x 4 terms = 80 credits). To graduate with an undergraduate degree from Fulbright, you must earn a minimum of 128 credit hours. Therefore, even if you take the maximum load every term for four years, you would only complete 320 credits, which far exceeds the minimum requirement but does not address the question of how many credits you can take. The question about paying full tuition fee is irrelevant to the credit hour limit discussion.  
+Based on the information provided, you cannot take 160 credits in four years. The typical full-time course load is 16 credit hours per term, which means a maximum of 64 credits per year (16 credits x 4 terms = 64 credits). Therefore, over four years, you would be able to complete a maximum of 256 credits, but this exceeds the minimum graduation requirement of 128 credits. 
+
+The context about the maximum length of study and the fact that Fulbright follows MOET regulations stating that the maximum time to complete the program cannot exceed double the standard does not directly impact the total number of credits you can take. It rather refers to the duration of your studies. 
+
+Additionally, the tuition fee payment does not influence the number of credits you can take. You can still take up to 64 credits per year, depending on your course load and the number of terms you attend annually. Therefore, taking 160 credits in four years is not feasible under these conditions.  
 
 <details>  
 <summary>References</summary>  
