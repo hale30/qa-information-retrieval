@@ -69,7 +69,7 @@ def main():
                     {response}  
 
                     <details>  
-                    <summary>Context</summary>  
+                    <summary>References:</summary>  
 
                     {context}  
 
