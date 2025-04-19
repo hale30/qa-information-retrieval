@@ -5,11 +5,11 @@ import re
 import gc
 import torch
 import json
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
-from langchain.docstore.document import Document
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from langchain.vectorstores import Chroma
+# from langchain.docstore.document import Document
+# from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+# from langchain_huggingface import HuggingFaceEmbeddings
 
 def free_cuda_memory():
     """Function to release all CUDA memory and clear PyTorch cache."""
@@ -117,7 +117,7 @@ def clean_majordescription(pdf_path):
     current_section_content = []
 
     wanted_section_titles = [
-        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "ECONOMICS",
+        "APPLIED MATHEMATICS", "ARTS AND MEDIA STUDIES", "ECONOMICS", "COMPUTER SCIENCE",
         "HUMAN-CENTERED ENGINEERING", "HISTORY", "PSYCHOLOGY", "INTEGRATED SCIENCES",
         "LITERATURE", "SOCIAL STUDIES", "VIETNAM STUDIES"
     ]
@@ -135,7 +135,7 @@ def clean_majordescription(pdf_path):
 
         for line in filtered:
             if line in wanted_section_titles:
-                if current_section_title:
+                if current_section_title and current_section_title != "COMPUTER SCIENCE":
                     joined_content = " ".join(current_section_content)
                     sections.append({
                         "text": f"{current_section_title}: {joined_content}",
@@ -143,11 +143,11 @@ def clean_majordescription(pdf_path):
                         "page": page_num
                     })
                 current_section_title = line
-                current_section_content = []
-            else:
+                current_section_content = [] if current_section_title != "COMPUTER SCIENCE" else None
+            elif current_section_title != "COMPUTER SCIENCE" and current_section_content is not None:
                 current_section_content.append(line)
 
-    if current_section_title and current_section_content:
+    if current_section_title and current_section_title != "COMPUTER SCIENCE":
         joined_content = " ".join(current_section_content)
         sections.append({
             "text": f"{current_section_title}: {joined_content}",
@@ -156,7 +156,6 @@ def clean_majordescription(pdf_path):
         })
 
     return sections
-
 
 def clean_aapolicy(pdf_path):
     doc = fitz.open(pdf_path)
