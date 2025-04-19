@@ -5,11 +5,11 @@ import re
 import gc
 import torch
 import json
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.vectorstores import Chroma
-# from langchain.docstore.document import Document
-# from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-# from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.vectorstores import Chroma
+from langchain.docstore.document import Document
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from langchain_huggingface import HuggingFaceEmbeddings
 
 def free_cuda_memory():
     """Function to release all CUDA memory and clear PyTorch cache."""
@@ -136,6 +136,8 @@ def clean_majordescription(pdf_path):
         for line in filtered:
             if line in wanted_section_titles:
                 if current_section_title and current_section_title != "COMPUTER SCIENCE":
+
+                if current_section_title:
                     joined_content = " ".join(current_section_content)
                     sections.append({
                         "text": f"{current_section_title}: {joined_content}",
@@ -273,6 +275,13 @@ def build_vectorstore(chunks = "", persist_path="./answer_all_policy/database/aa
     # model_name_or_path = "Alibaba-NLP/gte-multilingual-base"
     # tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     # model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True)
+
+    # vectorstore = Chroma.from_documents(
+    #     documents=chunks,
+    #     embedding=embedding_model,
+    #     persist_directory=persist_path
+    # )
+
     vectorstore = Chroma(
         embedding_function=embedding_model,
         persist_directory=persist_path
@@ -304,10 +313,11 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
         formatted_context += f"[Source: {source}, Page: {page}]\n{doc.page_content.strip()}\n\n"
         raw_context += doc.page_content.strip() + "\n"
 
-    prompt = f"""Answer the question based on the following context:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
+    prompt = f"""Answer the question based on the following contexts. Say that the references are irrelevant to the question if necessary. Stop when you have nothing else to say:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
 
     # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
-    response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.1)[0]["generated_text"]
+    # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.1)[0]["generated_text"]
+    response = llm_pipe(prompt, max_new_tokens=1024, temperature=0.1)[0]["generated_text"]
     return formatted_context.strip(), response[len(prompt):].strip()
 
 

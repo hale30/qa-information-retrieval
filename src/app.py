@@ -5,7 +5,7 @@ from utils import *
 
 EMBEDDING_MODEL = "jinaai/jina-embeddings-v3"
 LLM_MODEL = "Qwen/Qwen2.5-7B-Instruct-1M"
-VECTORSTORE_PATH = "data/database_no_student_journey"
+VECTORSTORE_PATH = "data/database_no_student_journey/jina-embeddings-v3/"
 QUESTIONS_JSON = "data/questions.json" 
 
 @st.cache_resource
@@ -38,7 +38,7 @@ else:
 
 if user_question:
     with st.spinner("Generating answer..."):
-        context, answer = ask_question(llm_pipe, vectorstore, user_question)
+        context, answer = ask_question(llm_pipe, vectorstore, user_question, top_k=5)
         st.markdown(f"### 🧠 Answer:\n{answer}")
         with st.expander("📚 Sources"):
             st.text(context)
