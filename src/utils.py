@@ -234,7 +234,7 @@ def debrief_name(string):
         "cs2": "Computer Science 2",
         "mvcs": "Modern Vietnamese Culture and Society",
         "si": "Scientific Inquiry",
-        "dst": "Design System Thinking",
+        "dst": "Design and System Thinking",
         "gh": "Global Humanity and Social Changes",
         "econ1": "Principle of Economics 1",
         "econ2": "Principle of Economics 2",
@@ -268,15 +268,14 @@ def chunk_paragraphs(paragraphs_with_meta):
 
 
 # === Step 3: Build vector store ===
-def build_vectorstore(chunks, persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
+def build_vectorstore(chunks = "", persist_path="./answer_all_policy/database/aapolicy", model_name = "jinaai/jina-embeddings-v3"):
     # print(type(documents[0]))
     embedding_model = HuggingFaceEmbeddings(model_name= model_name)
     # model_name_or_path = "Alibaba-NLP/gte-multilingual-base"
     # tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     # model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True)
-    vectorstore = Chroma.from_documents(
-        documents=chunks,
-        embedding=embedding_model,
+    vectorstore = Chroma(
+        embedding_function=embedding_model,
         persist_directory=persist_path
     )
     vectorstore.persist()
