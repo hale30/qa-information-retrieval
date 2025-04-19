@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="101aefb1-dc3d-4c43-845e-ae3c9cd099b5" name="Changes" comment="Change chunk overlap to 0">
+      <change afterPath="$PROJECT_DIR$/data/questions_wrong_context.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/data_level0.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/header.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/index_metadata.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/length.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/link_lists.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/database/jina-embeddings-v3/chroma.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/documents/Major Descriptions and Flowcharts December 2021_211220.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="indexing_database" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HoanNhi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hale30/qa-information-retrieval.git&quot;,
+    &quot;accountId&quot;: &quot;7c13aef0-9ad0-4673-a43a-7e7e9682df81&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;hale30&quot;,
+    &quot;repository&quot;: &quot;qa-information-retrieval&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2viuFxmiEaujIQVSbXwaEdi8QGu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.testModel.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "indexing__database",
+    "last_opened_file_path": "/home/thomas/Downloads/qa-information-retrieval_2/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="101aefb1-dc3d-4c43-845e-ae3c9cd099b5" name="Changes" comment="" />
+      <created>1744640115451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744640115451</updated>
+      <workItem from="1744640116534" duration="121000" />
+      <workItem from="1744640246736" duration="579000" />
+      <workItem from="1744640953399" duration="4664000" />
+      <workItem from="1744993226357" duration="113000" />
+      <workItem from="1745028169479" duration="16977000" />
+    </task>
+    <task id="LOCAL-00001" summary="Upload the new answer">
+      <option name="closed" value="true" />
+      <created>1744992244237</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744992244237</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update new answer format.">
+      <option name="closed" value="true" />
+      <created>1745032567083</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745032567084</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add database">
+      <option name="closed" value="true" />
+      <created>1745036885324</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745036885324</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change chunk overlap to 0">
+      <option name="closed" value="true" />
+      <created>1745047605514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745047605514</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upload the new answer" />
+    <MESSAGE value="Update new answer format." />
+    <MESSAGE value="Add database" />
+    <MESSAGE value="Change chunk overlap to 0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change chunk overlap to 0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/utils.py</url>
+          <line>233</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/qa_information_retrieval_2$testModel.coverage" NAME="testModel Coverage Results" MODIFIED="1745047583733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+  </component>
+</project>

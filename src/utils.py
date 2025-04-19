@@ -226,7 +226,7 @@ def load_data(folder_path):
 
 
 def chunk_paragraphs(paragraphs_with_meta):
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=0)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=512)
     all_chunks = []
 
     for item in paragraphs_with_meta:

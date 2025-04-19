@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_13_20,_19_04_2025_[Changes]" date="1745043627472" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_20,_19_04_2025_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 13:20, 19/04/2025 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/data_level0.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/link_lists.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/header.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="data/database/jina-embeddings-v3/8977af7f-2bc1-4b04-bbcd-94f45c93e568/length.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="data/database/jina-embeddings-v3/chroma.sqlite3" />
+  </binary>
+</changelist>
