@@ -12,7 +12,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_huggingface import HuggingFaceEmbeddings
 
 def free_cuda_memory():
-    """Function to release all CUDA memory and clear PyTorch cache."""
+    """
+    Function to release all CUDA memory and clear PyTorch cache.
+    """
     # Collect garbage
     gc.collect()
 
@@ -210,15 +212,15 @@ def load_data(folder_path):
         file_path = os.path.join(folder_path, file)
         if "CS_major_handbook.pdf" in file:
             data.extend(clean_capstone(file_path))
-            print(f"CS_major_handbook.pdf")
+            # print(f"CS_major_handbook.pdf")
         elif "major" in file.lower():
-            print("Major")
+            # print("Major")
             data.extend(clean_majordescription(file_path))
         elif "capstone" in file.lower():
-            print("Capstone")
+            # print("Capstone")
             data.extend(clean_capstone(file_path))
         elif "academic" in file.lower():
-            print("AA Policy")
+            # print("AA Policy")
             data.extend(clean_aapolicy(file_path))
         else:
             print(f"File {file} is not supported!!!!!!!!")
@@ -330,3 +332,4 @@ def prepare_question(json_file_path):
         question = debrief_name(question)
         new_questions.append(question)
     return new_questions
+    
