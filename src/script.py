@@ -1,66 +1,54 @@
 from utils import *
 import torch
 import os
+from datetime import datetime
 
-def main():
-    save_folder = "/home/thomas/Downloads/qa-information-retrieval_2/data/" # Change the name of the folder to save the output
-    answer_path = os.path.join(save_folder, "answer_1")
-    database_path = os.path.join(save_folder, "database_no_student_journey")
-    data_path = "/home/thomas/Downloads/qa-information-retrieval_2/data/documents" # Change the path to your data file
+def prepare_paths(base_path):
+    answer_path = os.path.join(base_path, "answers")
+    database_path = os.path.join(base_path, "standard_database")
+    data_path = os.path.join(base_path, "documents")
+
     os.makedirs(answer_path, exist_ok=True)
     os.makedirs(database_path, exist_ok=True)
 
-    # Define embedding models to be tested
-    embedding_models = [
-        # "Alibaba-NLP/gte-multilingual-base",
-        # "ibm-granite/granite-embedding-125m-english",
-        # "NovaSearch/stella_en_400M_v5",
-        "jinaai/jina-embeddings-v3",
-        # "NovaSearch/jasper_en_vision_language_v1",
-        # "w601sxs/b1ade-embed"
-    ]
+    return answer_path, database_path, data_path
 
-    # Define LLM models to be tested
-    llm_models = [
-        # "mistralai/Mistral-7B-Instruct-v0.3",
-        # "allenai/Llama-3.1-Tulu-3-8B",
-        "Qwen/Qwen2.5-7B-Instruct-1M",
-    ]
+def process_embedding_model(embedding_model, chunks, database_path):
+    embedding_name = embedding_model.split("/")[-1]
+    print(f"[{datetime.now()}] Building vectorstore for: {embedding_name}")
 
-    # Load and preprocess the PDF document
-    data = load_data(data_path)
-    chunks = chunk_paragraphs(data)  # Chunk text into manageable pieces
+    vectorstore = build_vectorstore(
+        chunks=chunks,
+        persist_path=os.path.join(database_path, embedding_name),
+        model_name=embedding_model
+    )
+    print("Vectorstore built and persisted.")
+    return embedding_name, vectorstore
 
-    for embedding_model in embedding_models:
-        embedding_name = embedding_model.split("/")[-1]
+def load_llm_safely(llm_model):
+    llm_name = llm_model.split("/")[-1]
+    try:
+        print(f"[{datetime.now()}] Loading LLM: {llm_name}")
+        llm_pipe = load_local_llm(llm_model)
+        return llm_name, llm_pipe
+    except torch.cuda.OutOfMemoryError:
+        print(f"CUDA OOM when loading LLM {llm_name}. Skipping...")
+        torch.cuda.empty_cache()
+    except Exception as e:
+        print(f"Error loading LLM {llm_name}: {e}. Skipping...")
+    return llm_name, None
 
-        # Build vectorstore for each embedding model
-        vectorstore = build_vectorstore(chunks = chunks, persist_path=os.path.join(database_path, embedding_name),
-                                        model_name=embedding_model)
-        print("✅ Vectorstore built and persisted.")
+def answer_questions(llm_pipe, vectorstore, questions, llm_name, embedding_name):
+    markdown_content = f"# Experiment Results\n## Model: {llm_name} with {embedding_name}\n"
 
-        for llm_model in llm_models:
-            llm_name = llm_model.split("/")[-1]
-
-            print(f"-" * 30 + f"Answer with {embedding_name} and {llm_name}" + "-" * 30)
-
-            # Load the selected LLM model
-            try:
-                llm_pipe = load_local_llm(llm_model)
-            except torch.cuda.OutOfMemoryError:
-                print(f"Cuda out of memory when loading model LLM {llm_name}!!!! Continue")
-
-            # Prepare questions to ask the model
-            list_questions = prepare_question("/home/thomas/Downloads/qa-information-retrieval_2/data/questions_wrong_context.json")
-            # Initialize markdown content for results
-            markdown_content = f"""# Experiment Results\n## Model: {llm_model} with {embedding_model}\n"""
-            for i, question in enumerate(list_questions, start=1):
-                try:
-                    # Get response from the LLM
-                    context, response = ask_question(llm_pipe, vectorstore, question, top_k = 5)
-                    print(response)
-                    print("-" * 50)
-                    markdown_content += f"""### Question {i}: {question}  
+    for i, question in enumerate(questions, start=1):
+        try:
+            print(f"[{datetime.now()}] Asking Q{i}: {question}")
+            with torch.no_grad():
+                context, response = ask_question(llm_pipe, vectorstore, question, top_k=5)
+            print(response)
+            print("-" * 50)
+            markdown_content += f"""### Question {i}: {question}  
 ### Answer: 
 
 {response}  
@@ -73,22 +61,65 @@ def main():
 </details> 
 
 """
-                except torch.cuda.OutOfMemoryError:
-                    print("Cuda is out of memory!!! Continue to the next question.")
-                    print("-" * 50)
-                    markdown_content += f"""### Question {i}: {question}\n Cuda is out of memory!!!! Continue"""
+        except torch.cuda.OutOfMemoryError:
+            print(f"CUDA OOM during Q{i}. Skipping...")
+            torch.cuda.empty_cache()
+            markdown_content += f"""### Question {i}: {question}\n Cuda is out of memory!!!! Skipping\n"""
+        except Exception as e:
+            print(f"Error during Q{i}: {e}")
+            markdown_content += f"""### Question {i}: {question}\n Error: {str(e)}\n"""
 
-            # Free up CUDA memory after processing each model
+    return markdown_content
+
+def save_results(markdown_content, answer_path, llm_name, embedding_name):
+    file_path = os.path.join(answer_path, f"answers_with_{llm_name}_{embedding_name}.md")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(markdown_content)
+    print(f"Results saved at: {file_path}")
+
+def main():
+    base_path = "/home/thomas/Downloads/qa-information-retrieval_2/data/"
+    answer_path, database_path, data_path = prepare_paths(base_path)
+    
+    # Define embedding models to be tested
+    embedding_models = [
+        # "Alibaba-NLP/gte-multilingual-base",
+        # "ibm-granite/granite-embedding-125m-english",
+        # "NovaSearch/stella_en_400M_v5",
+        "jinaai/jina-embeddings-v3",
+        # "NovaSearch/jasper_en_vision_language_v1",
+        # "w601sxs/b1ade-embed"
+    ]
+    
+    # Define LLM models to be tested
+    llm_models = [
+        # "mistralai/Mistral-7B-Instruct-v0.3",
+        # "allenai/Llama-3.1-Tulu-3-8B",
+        "Qwen/Qwen2.5-7B-Instruct-1M",
+    ]
+    print(f"[{datetime.now()}] Loading and chunking data...")
+    data = load_data(data_path)
+    chunks = chunk_paragraphs(data)
+
+    questions = prepare_question(os.path.join(base_path, "questions.json"))
+
+    for embedding_model in embedding_models:
+        embedding_name, vectorstore = process_embedding_model(embedding_model, chunks, database_path)
+
+        for llm_model in llm_models:
+            print("-" * 30 + f" {embedding_name} + {llm_model.split('/')[-1]} " + "-" * 30)
+
+            llm_name, llm_pipe = load_llm_safely(llm_model)
+            if llm_pipe is None:
+                continue
+
+            markdown_content = answer_questions(llm_pipe, vectorstore, questions, llm_name, embedding_name)
+
+            del llm_pipe
+            torch.cuda.empty_cache()
             free_cuda_memory()
 
-            # Save markdown file with experiment results
-            # timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(answer_path, f"answers_with_{llm_name}_{embedding_name}.md")
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(markdown_content)
-
-            print(f"Markdown file saved at: {file_path}")
-
+            save_results(markdown_content, answer_path, llm_name, embedding_name)
 
 if __name__ == "__main__":
     main()
