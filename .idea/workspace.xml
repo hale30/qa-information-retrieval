@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="101aefb1-dc3d-4c43-845e-ae3c9cd099b5" name="Changes" comment="Change chunk overlap to 0">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43367a7-5d87-4e93-8411-286e4b764c14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43367a7-5d87-4e93-8411-286e4b764c14/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_20,_19_04_2025_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_20__19_04_2025__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/answer_1/answers_with_Qwen2.5-7B-Instruct-1M_jina-embeddings-v3.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/answer_1/answers_with_Qwen2.5-7B-Instruct-1M_jina-embeddings-v3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/0419be82-bf63-4af2-93ae-9adf1c16e085/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/0419be82-bf63-4af2-93ae-9adf1c16e085/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/0419be82-bf63-4af2-93ae-9adf1c16e085/index_metadata.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/0419be82-bf63-4af2-93ae-9adf1c16e085/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/0419be82-bf63-4af2-93ae-9adf1c16e085/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/database_no_student_journey/jina-embeddings-v3/chroma.sqlite3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,24 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Run",
-    "Python.testModel.executor": "Run",
-    "Python.utils.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "indexing__database",
-    "last_opened_file_path": "/home/thomas/Downloads/qa-information-retrieval_2/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testModel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;indexing__database&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/thomas/Downloads/qa-information-retrieval_2/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
@@ -103,7 +102,8 @@
       <workItem from="1744640246736" duration="579000" />
       <workItem from="1744640953399" duration="4664000" />
       <workItem from="1744993226357" duration="113000" />
-      <workItem from="1745028169479" duration="25410000" />
+      <workItem from="1745028169479" duration="31801000" />
+      <workItem from="1746244372500" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="Upload the new answer">
       <option name="closed" value="true" />
