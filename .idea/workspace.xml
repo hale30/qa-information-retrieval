@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="101aefb1-dc3d-4c43-845e-ae3c9cd099b5" name="Changes" comment="Change chunk overlap to 0">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43367a7-5d87-4e93-8411-286e4b764c14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43367a7-5d87-4e93-8411-286e4b764c14/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_20,_19_04_2025_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_20__19_04_2025__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +97,7 @@
       <workItem from="1744640953399" duration="4664000" />
       <workItem from="1744993226357" duration="113000" />
       <workItem from="1745028169479" duration="31801000" />
-      <workItem from="1746244372500" duration="305000" />
+      <workItem from="1746244372500" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="Upload the new answer">
       <option name="closed" value="true" />
