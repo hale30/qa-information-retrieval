@@ -169,6 +169,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
+.idea/
 .DS_Store
 data/questions_wrong_context.json
