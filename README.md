@@ -15,5 +15,11 @@ TODO:
 - [x] Structure context generation.
 - [x] Inspect why the current output context contains repetitive paragraphs.
 - [x] Do research on possible (optimal) ways to index database.
-- [ ] Find ways to resolve conflicts among document (if any). For now just discard the old version.
-- [ ] ... 
+- [x] Find ways to resolve conflicts among document (if any).
+- [x] Employ Streamlit UI.
+- [ ] Write report
+
+
+### Resources
+
+This model requires a large VRAM for single GPU. Currently, I am using Vast.ai with RTX A6000, 48 VRAM. Suggested VRAM on a single GPU is about 30GBs
