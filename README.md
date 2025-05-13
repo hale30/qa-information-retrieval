@@ -18,8 +18,3 @@ TODO:
 - [x] Find ways to resolve conflicts among document (if any).
 - [x] Employ Streamlit UI.
 - [ ] Write report
-
-
-### Resources
-
-This model requires a large VRAM for single GPU. Currently, I am using Vast.ai with RTX A6000, 48 VRAM. Suggested VRAM on a single GPU is about 30GBs
