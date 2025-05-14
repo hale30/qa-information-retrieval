@@ -39,6 +39,6 @@ else:
 if user_question:
     with st.spinner("Generating answer..."):
         context, answer = ask_question(llm_pipe, vectorstore, user_question, top_k=5)
-        st.markdown(f"### 🧠 Answer:\n{answer}")
-        with st.expander("📚 Sources"):
+        st.markdown(f"### Answer:\n{answer}")
+        with st.expander(" Sources"):
             st.text(context)
