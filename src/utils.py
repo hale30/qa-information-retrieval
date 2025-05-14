@@ -311,7 +311,7 @@ def ask_question(llm_pipe, vectorstore, query, top_k=3):
         formatted_context += f"[Source: {source}, Page: {page}]\n{doc.page_content.strip()}\n\n"
         raw_context += doc.page_content.strip() + "\n"
 
-    prompt = f"""Answer the question based on the following contexts. Say that the references are irrelevant to the question if necessary. Stop when you have nothing else to say:\n\n{raw_context}\n\nQuestion: {query}\nAnswer:"""
+    prompt = f"""Think and answer the question using on the following contexts. Do calculations if the question involves calculations. If the contexts are irrelevant, say contexts are irrelevant and cannot be used to the question. Stop when you have nothing else to say.\n\nContext: {raw_context}\n\nQuestion: {query}\nAnswer:"""
 
     # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.7)[0]["generated_text"]
     # response = llm_pipe(prompt, max_new_tokens=1024, do_sample=True, temperature=0.1)[0]["generated_text"]

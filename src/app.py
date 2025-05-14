@@ -5,7 +5,7 @@ from utils import *
 
 EMBEDDING_MODEL = "jinaai/jina-embeddings-v3"
 LLM_MODEL = "Qwen/Qwen2.5-7B-Instruct-1M"
-VECTORSTORE_PATH = "data/database_no_student_journey/jina-embeddings-v3/"
+VECTORSTORE_PATH = "data/database/jina-embeddings-v3/"
 QUESTIONS_JSON = "data/questions.json" 
 
 @st.cache_resource
